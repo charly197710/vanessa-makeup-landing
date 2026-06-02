@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VANESSA MAKE UP — 5 Conceptos 3D</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0a0a;
+      color: #e8e8e8;
+      font-family: 'Helvetica Neue', sans-serif;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      font-family: Georgia, serif;
+      color: #c4836c;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.2rem;
+      font-size: 2rem;
+    }
+    .subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 3rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+      border: 1px solid rgba(196, 131, 108, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .card h3 {
+      color: #c4836c;
+      font-family: Georgia, serif;
+      margin: 1.2rem 0 0.5rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+      font-weight: 400;
+    }
+    .card p {
+      color: #aaa;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+    .card svg {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    .tag {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(196, 131, 108, 0.2), rgba(212, 165, 116, 0.1));
+      color: #d4a574;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      border: 1px solid rgba(196, 131, 108, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>VANESSA MAKE UP</h1>
+  <p class="subtitle">5 conceptos logo 3D — luxury • joyería • maquillaje</p>
+
+  <div class="grid">
+
+    <!-- CONCEPTO 1: Brocha 3D flotante -->
+    <div class="card">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+        <defs>
+          <!-- Metales -->
+          <linearGradient id="roseGold1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f5d5ce"/>
+            <stop offset="30%" stop-color="#d4a574"/>
+            <stop offset="60%" stop-color="#c4836c"/>
+            <stop offset="100%" stop-color="#8a5a45"/>
+          </linearGradient>
+          <linearGradient id="darkMetal1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#444"/>
+            <stop offset="100%" stop-color="#1a1a1a"/>
+          </linearGradient>
+          <linearGradient id="shine1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.4)"/>
+            <stop offset="50%" stop-color="rgba(255,255,255,0.1)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+          </linearGradient>
+          <!-- Sombra difusa -->
+          <filter id="shadow1">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feOffset dx="0" dy="8" result="offsetblur"/>
+            <feMerge><feMergeNode in="offsetblur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glow1">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <!-- Cerdas de brocha con textura -->
+          <pattern id="bristles1" width="4" height="4" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.15)"/>
+          </pattern>
+          <!-- 3D profundidad para mango -->
+          <linearGradient id="handle3d1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6b3a2a"/>
+            <stop offset="40%" stop-color="#d4a574"/>
+            <stop offset="60%" stop-color="#e8c4b8"/>
+            <stop offset="100%" stop-color="#6b3a2a"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Fondo con profundidad -->
+        <rect width="500" height="500" fill="#0d0d0d"/>
+        <radialGradient id="bgGlow1">
+          <stop offset="0%" stop-color="rgba(196,131,108,0.15)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <circle cx="250" cy="250" r="200" fill="url(#bgGlow1)"/>
+
+        <!-- Brocha 3D flotante -->
+        <g filter="url(#shadow1)">
+          <!-- Mango con forma curva 3D -->
+          <path d="M220,380 Q240,400 260,380 L270,200 Q250,180 230,200 Z" 
+                fill="url(#handle3d1)" stroke="#5a2d1f" stroke-width="1"/>
+          
+          <!-- Cerdas de la brocha - forma cónica 3D -->
+          <g filter="url(#glow1)">
+            <!-- Base de cerdas -->
+            <ellipse cx="250" cy="185" rx="45" ry="25" fill="#2a1518" stroke="url(#roseGold1)" stroke-width="2"/>
+            
+            <!-- Cerdas individuales curvándose hacia arriba -->
+            <path d="M210,180 Q200,140 220,120" stroke="#c4836c" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+            <path d="M225,175 Q215,130 235,100" stroke="#d4a574" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+            <path d="M240,172 Q235,120 250,90" stroke="#c4836c" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M255,172 Q260,120 265,90" stroke="#d4a574" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <path d="M270,175 Q280,130 285,100" stroke="#c4836c" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+            <path d="M285,180 Q295,140 290,120" stroke="#d4a574" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+            
+            <!-- Puntas blancas/plateadas -->
+            <ellipse cx="220" cy="120" rx="4" ry="8" fill="#e8e8e8" opacity="0.9"/>
+            <ellipse cx="235" cy="100" rx="4" ry="10" fill="#e8e8e8" opacity="0.9"/>
+            <ellipse cx="250" cy="90" rx="5" ry="12" fill="#f5f5f5"/>
+            <ellipse cx="265" cy="90" rx="5" ry="12" fill="#f5f5f5"/>
+            <ellipse cx="285" cy="100" rx="4" ry="10" fill="#e8e8e8" opacity="0.9"/>
+            <ellipse cx="290" cy="120" rx="4" ry="8" fill="#e8e8e8" opacity="0.9"/>
+          </g>
+
+          <!-- Reflejo metálico en el mango -->
+          <path d="M235,200 Q240,300 245,380" stroke="rgba(255,255,255,0.2)" stroke-width="6" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- Texto 3D con sombra -->
+        <g filter="url(#shadow1)">
+          <text x="250" y="460" text-anchor="middle" 
+                font-family="Georgia, serif" font-size="42" 
+                fill="url(#roseGold1)" letter-spacing="8" font-weight="400" 
+                stroke="#5a2d1f" stroke-width="1">VANESSA</text>
+          <text x="250" y="485" text-anchor="middle" 
+                font-family="Helvetica Neue, Arial, sans-serif" font-size="16" 
+                fill="#c4836c" letter-spacing="12" font-weight="300"
+                stroke="rgba(0,0,0,0.5)" stroke-width="0.5">MAKE UP</text>
+        </g>
+
+        <!-- Brillo atmosférico superior -->
+        <ellipse cx="250" cy="80" rx="120" ry="40" fill="rgba(212,165,116,0.05)" filter="url(#glow1)"/>
+      </svg>
+      <h3>01. Brocha Flotante 3D</h3>
+      <p>Brocha con cerdas ascendentes en rose gold, reflejos metálicos y profundidad. Mango con curva orgánica.</p>
+      <span class="tag">3D Luxury</span>
+    </div>
+
+    <!-- CONCEPTO 2: Cualismo circular joya -->
+    <div class="card">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+        <defs>
+          <linearGradient id="roseGold2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f5d5ce"/>
+            <stop offset="35%" stop-color="#e8b4b8"/>
+            <stop offset="65%" stop-color="#c4836c"/>
+            <stop offset="100%" stop-color="#7a4a38"/>
+          </linearGradient>
+          <linearGradient id="gemCut" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+            <stop offset="25%" stop-color="rgba(255,255,255,0.1)"/>
+            <stop offset="50%" stop-color="rgba(232,180,184,0.3)"/>
+            <stop offset="75%" stop-color="rgba(255,255,255,0.15)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0.4)"/>
+          </linearGradient>
+          <filter id="shadow2">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feOffset dx="0" dy="6" result="offsetblur"/>
+            <feMerge><feMergeNode in="offsetblur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="sparkle">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <radialGradient id="innerGlow2">
+            <stop offset="0%" stop-color="rgba(196,131,108,0.3)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="500" height="500" fill="#0d0d0d"/>
+        <circle cx="250" cy="220" r="150" fill="url(#innerGlow2)"/>
+
+        <!-- Cualismo circular con facetas de gema -->
+        <g filter="url(#shadow2)">
+          <!-- Anillo exterior 3D -->
+          <circle cx="250" cy="210" r="90" fill="none" stroke="url(#roseGold2)" stroke-width="8"/>
+          <circle cx="250" cy="210" r="82" fill="none" stroke="url(#gemCut)" stroke-width="2" opacity="0.6"/>
+          
+          <!-- Facetas internas que simulan corte de gema -->
+          <path d="M250,130 L290,170 L250,210 L210,170 Z" fill="url(#gemCut)" opacity="0.3"/>
+          <path d="M250,210 L290,170 L280,250 L250,280 Z" fill="url(#gemCut)" opacity="0.25"/>
+          <path d="M250,210 L210,170 L220,250 L250,280 Z" fill="url(#gemCut)" opacity="0.2"/>
+
+          <!-- Brochazo dentro del círculo -->
+          <g filter="url(#sparkle)">
+            <path d="M200,200 Q230,190 260,210" stroke="url(#roseGold2)" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path d="M260,210 Q280,230 310,220" stroke="url(#gemCut)" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.8"/>
+          </g>
+
+          <!-- V+M minimal en el centro -->
+          <text x="250" y="225" text-anchor="middle" 
+                font-family="Georgia, serif" font-size="32" 
+                fill="url(#roseGold2)" letter-spacing="4" font-weight="400">V+M</text>
+        </g>
+
+        <!-- Vanessa -->
+        <text x="250" y="370" text-anchor="middle" 
+              font-family="Georgia, serif" font-size="38" 
+              fill="url(#roseGold2)" letter-spacing="10" font-weight="300">VANESSA</text>
+        <line x1="170" y1="390" x2="330" y2="390" stroke="#c4836c" stroke-width="1.5" opacity="0.5"/>
+        
+        <!-- Make Up -->
+        <text x="250" y="420" text-anchor="middle" 
+              font-family="Helvetica Neue, Arial, sans-serif" font-size="18" 
+              fill="#c4836c" letter-spacing="16" font-weight="300">MAKE UP</text>
+
+        <text x="250" y="450" text-anchor="middle" 
+              font-family="Helvetica Neue, Arial, sans-serif" font-size="10" 
+              fill="#777" letter-spacing="3" font-weight="400">MAQUILLAJE PROFESIONAL</text>
+
+        <!-- Brillo decorativo -->
+        <circle cx="350" cy="120" r="3" fill="#f5d5ce" filter="url(#sparkle)" opacity="0.8"/>
+        <circle cx="150" cy="300" r="2" fill="#f5d5ce" filter="url(#sparkle)" opacity="0.6"/>
+      </svg>
+      <h3>02. Cualismo Joya 3D</h3>
+      <p>Círculo con facetas de gema tallada, reflectancia y profundidad. Sello de lujo absoluto.</p>
+      <span class="tag">Gem Cut</span>
+    </div>
+
+    <!-- CONCEPTO 3: Pestaña gigante en relieve -->
+    <div class="card">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+        <defs>
+          <linearGradient id="lashGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f5d5ce"/>
+            <stop offset="30%" stop-color="#d4a574"/>
+            <stop offset="70%" stop-color="#c4836c"/>
+            <stop offset="100%" stop-color="#5a3a2a"/>
+          </linearGradient>
+          <linearGradient id="lashHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.5)"/>
+            <stop offset="100%" stop-color="rgba(196,131,108,0.2)"/>
+          </linearGradient>
+          <linearGradient id="metal3d3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e8e8e8"/>
+            <stop offset="50%" stop-color="#c4836c"/>
+            <stop offset="100%" stop-color="#8a5a45"/>
+          </linearGradient>
+          <filter id="volumeShadow3">
+            <feGaussianBlur stdDeviation="10" result="blur"/>
+            <feOffset dx="0" dy="12" result="offsetblur"/>
+            <feMerge><feMergeNode in="offsetblur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="relieve3">
+            <feGaussianBlur stdDeviation="1.5" result="blur"/>
+            <feSpecularLighting surfaceScale="3" specularConstant="1" specularExponent="20" lighting-color="white" in="blur" result="spec">
+              <fePointLight x="250" y="100" z="200"/>
+            </feSpecularLighting>
+            <feMerge><feMergeNode in="spec"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <rect width="500" height="500" fill="#0d0d0d"/>
+        <radialGradient id="bgGlow3">
+          <stop offset="0%" stop-color="rgba(232,180,184,0.1)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <circle cx="250" cy="220" r="160" fill="url(#bgGlow3)"/>
+
+        <!-- Pestaña gigante como símbolo central -->
+        <g filter="url(#volumeShadow3)">
+          <!-- Forma 3D con profundidad -->
+          <path d="M250,100 Q200,150 180,220 Q170,280 200,320 Q230,300 250,280 Q270,300 300,320 Q330,280 320,220 Q300,150 250,100 Z" 
+                fill="url(#lashGrad3)" stroke="#3a2a1a" stroke-width="2"/>
+          
+          <!-- Reflejo de volumen -->
+          <path d="M250,100 Q200,150 185,220 Q180,260 200,300 Q230,280 250,260 Q240,200 250,100 Z" 
+                fill="url(#lashHighlight)" opacity="0.6"/>
+
+          <!-- Pestañas más pequeñas secundarias -->
+          <path d="M180,220 Q150,200 140,180" stroke="url(#lashGrad3)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M320,220 Q350,200 360,180" stroke="url(#lashGrad3)" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+          <!-- Brillo especular -->
+          <ellipse cx="230" cy="180" rx="15" ry="30" fill="rgba(255,255,255,0.2)" transform="rotate(-20 230 180)"/>
+        </g>
+
+        <!-- Letras integradas -->
+        <text x="250" y="400" text-anchor="middle" 
+              font-family="Georgia, serif" font-size="40" 
+              fill="url(#metal3d3)" letter-spacing="10" font-weight="300"
+              filter="url(#relieve3)">VANESSA</text>
+        <line x1="170" y1="420" x2="330" y2="420" stroke="#c4836c" stroke-width="1.5" opacity="0.4"/>
+        <text x="250" y="450" text-anchor="middle" 
+              font-family="Helvetica Neue, Arial, sans-serif" font-size="16" 
+              fill="#d4a574" letter-spacing="14" font-weight="300">MAKE UP</text>
+      </svg>
+      <h3>03. Pestaña Gigante Relieve</h3>
+      <p>Pestaña como joya central con volumen, reflejos especulares y profundidad 3D.</p>
+      <span class="tag">Sculptural</span>
+    </div>
+
+    <!-- CONCEPTO 4: Brochazo + V abstracto -->
+    <div class="card">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+        <defs>
+          <linearGradient id="splash4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f0d4c8"/>
+            <stop offset="25%" stop-color="#d4a574"/>
+            <stop offset="50%" stop-color="#c4836c"/>
+            <stop offset="75%" stop-color="#a86b56"/>
+            <stop offset="100%" stop-color="#6b3a2a"/>
+          </linearGradient>
+          <radialGradient id="splashParticle4">
+            <stop offset="0%" stop-color="rgba(212,165,116,0.8)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <filter id="splashGlow4">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="depth4">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feOffset dx="0" dy="10" result="offsetblur"/>
+            <feMerge><feMergeNode in="offsetblur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <rect width="500" height="500" fill="#0d0d0d"/>
+        <radialGradient id="bg4">
+          <stop offset="0%" stop-color="rgba(196,131,108,0.12)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <circle cx="250" cy="240" r="170" fill="url(#bg4)"/>
+
+        <!-- Brochazo que forma V abstracta -->
+        <g filter="url(#splashGlow4)">
+          <!-- Trazo principal con grosor variable -->
+          <path d="M150,280 Q180,200 220,150 Q250,120 280,140" 
+                stroke="url(#splash4)" stroke-width="28" fill="none" 
+                stroke-linecap="round" opacity="0.9"/>
+          
+          <!-- Segunda capa de brochazo -->
+          <path d="M280,140 Q310,160 340,200 Q360,240 350,280" 
+                stroke="url(#splash4)" stroke-width="20" fill="none" 
+                stroke-linecap="round" opacity="0.85"/>
+
+          <!-- Salpicaduras 3D -->
+          <circle cx="140" cy="260" r="8" fill="url(#splashParticle4)" filter="url(#splashGlow4)"/>
+          <circle cx="160" cy="300" r="5" fill="url(#splashParticle4)"/>
+          <circle cx="360" cy="260" r="7" fill="url(#splashParticle4)" filter="url(#splashGlow4)"/>
+          <circle cx="370" cy="290" r="4" fill="url(#splashParticle4)"/>
+          <circle cx="300" cy="130" r="6" fill="url(#splashParticle4)" filter="url(#splashGlow4)"/>
+          
+          <!-- Gotas/mini brochazos -->
+          <path d="M200,180 L190,160" stroke="#d4a574" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+          <path d="M300,180 L310,155" stroke="#d4a574" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+        </g>
+
+        <!-- Texto con profundidad -->
+        <g filter="url(#depth4)">
+          <text x="250" y="420" text-anchor="middle" 
+                font-family="Georgia, serif" font-size="38" 
+                fill="url(#splash4)" letter-spacing="10" font-weight="400">VANESSA</text>
+        </g>
+        <line x1="175" y1="440" x2="325" y2="440" stroke="#c4836c" stroke-width="1.5" opacity="0.5"/>
+        <text x="250" y="470" text-anchor="middle" 
+              font-family="Helvetica Neue, Arial, sans-serif" font-size="16" 
+              fill="#d4a574" letter-spacing="16" font-weight="300">MAKE UP</text>
+
+        <!-- Partículas flotantes -->
+        <circle cx="100" cy="120" r="2" fill="#d4a574" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="400" cy="100" r="1.5" fill="#e8b4b8" opacity="0.4">
+          <animate attributeName="opacity" values="0.4;0.1;0.4" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      <h3>04. Brochazo Abstracto 3D</h3>
+      <p>Trazo de brocha con grosor variable, salpicaduras flotantes y profundidad dinámica.</p>
+      <span class="tag">Kinetic</span>
+    </div>
+
+    <!-- CONCEPTO 5: Gemas y pack geométrico -->
+    <div class="card">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+        <defs>
+          <linearGradient id="diamond5" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="20%" stop-color="#f5d5ce"/>
+            <stop offset="40%" stop-color="#d4a574"/>
+            <stop offset="60%" stop-color="#c4836c"/>
+            <stop offset="80%" stop-color="#8a5a45"/>
+            <stop offset="100%" stop-color="#5a3a2a"/>
+          </linearGradient>
+          <linearGradient id="innerFacet5" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.7)"/>
+            <stop offset="30%" stop-color="rgba(255,255,255,0.1)"/>
+            <stop offset="60%" stop-color="rgba(196,131,108,0.15)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0.2)"/>
+          </linearGradient>
+          <filter id="diamondGlow5">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="diamondShadow5">
+            <feGaussianBlur stdDeviation="12" result="blur"/>
+            <feOffset dx="0" dy="15" result="offsetblur"/>
+            <feComposite in2="SourceGraphic" operator="in"/>
+            <feMerge><feMergeNode in="offsetblur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <!-- Gradiente anillo 3D -->
+          <linearGradient id="ringGrad5" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#8a5a45"/>
+            <stop offset="30%" stop-color="#f5d5ce"/>
+            <stop offset="50%" stop-color="#e8c4b8"/>
+            <stop offset="70%" stop-color="#d4a574"/>
+            <stop offset="100%" stop-color="#8a5a45"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="500" height="500" fill="#0d0d0d"/>
+        <radialGradient id="bg5">
+          <stop offset="0%" stop-color="rgba(212,165,116,0.15)"/>
+          <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+        <circle cx="250" cy="220" r="160" fill="url(#bg5)"/>
+
+        <!-- Diamante central en relieve -->
+        <g filter="url(#diamondShadow5)">
+          <!-- Forma de diamante con corte facetado -->
+          <path d="M250,90 L310,170 L250,250 L190,170 Z" 
+                fill="url(#diamond5)" stroke="#3a2a1a" stroke-width="1.5" filter="url(#diamondGlow5)"/>
+          
+          <!-- Facetas internas -->
+          <path d="M250,90 L250,250 L190,170 Z" fill="url(#innerFacet5)" opacity="0.5"/>
+          <path d="M250,90 L250,250 L310,170 Z" fill="url(#innerFacet5)" opacity="0.4"/>
+          <path d="M190,170 L250,250 L310,170 Z" fill="url(#innerFacet5)" opacity="0.3"/>
+
+          <!-- Brillo central -->
+          <ellipse cx="235" cy="150" rx="12" ry="25" fill="rgba(255,255,255,0.5)" transform="rotate(-15 235 150)"/>
+
+          <!-- Anillo que rodea el diamante -->
+          <circle cx="250" cy="200" r="60" fill="none" stroke="url(#ringGrad5)" stroke-width="6" opacity="0.9"/>
+          <circle cx="250" cy="200" r="55" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+
+          <!-- V+M en el centro -->
+          <text x="250" y="210" text-anchor="middle" 
+                font-family="Georgia, serif" font-size="28" 
+                fill="#0d0d0d" letter-spacing="4" font-weight="600">V+M</text>
+        </g>
+
+        <!-- Brillo ambiental -->
+        <circle cx="150" cy="120" r="4" fill="#f5d5ce" filter="url(#diamondGlow5)" opacity="0.7"/>
+        <circle cx="350" cy="140" r="3" fill="#f5d5ce" filter="url(#diamondGlow5)" opacity="0.6"/>
+
+        <!-- Texto con profundidad -->
+        <text x="250" y="380" text-anchor="middle" 
+              font-family="Georgia, serif" font-size="36" 
+              fill="url(#diamond5)" letter-spacing="10" font-weight="300"
+              filter="url(#diamondGlow5)">VANESSA</text>
+        <line x1="180" y1="400" x2="320" y2="400" stroke="#c4836c" stroke-width="1" opacity="0.5"/>
+        <text x="250" y="430" text-anchor="middle" 
+              font-family="Helvetica Neue, Arial, sans-serif" font-size="18" 
+              fill="#d4a574" letter-spacing="14" font-weight="300">MAKE UP</text>
+        <text x="250" y="460" text-anchor="middle" 
+              font-family="Helvetica Neue, Arial, sans-serif" font-size="10" 
+              fill="#777" letter-spacing="4" font-weight="400">MAQUILLAJE PROFESIONAL</text>
+      </svg>
+      <h3>05. Diamante Cortado 3D</h3>
+      <p>Gema con facetas reflectantes, anillo metálico y corte joyero. Lujo geométrico.</p>
+      <span class="tag">Faceted Gem</span>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="metalRose2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a86b56"/>
+      <stop offset="50%" stop-color="#e8b4b8"/>
+      <stop offset="100%" stop-color="#a86b56"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="600" height="600" fill="#0d0d0d"/>
+
+  <!-- V minimalista: forma que contiene cerdas de pincel subiendo desde el vértice inferior -->
+  <g transform="translate(300,220)" filter="url(#glow2)">
+    <!-- Brazos del V hechos de cerdas ascendentes -->
+    <g stroke="url(#metalRose2)" stroke-width="3" stroke-linecap="round" opacity="0.9">
+      <!-- lado izquierdo: 6 líneas -->
+      <line x1="-80" y1="50" x2="-90" y2="-60"/>
+      <line x1="-70" y1="50" x2="-85" y2="-65"/>
+      <line x1="-60" y1="50" x2="-75" y2="-70"/>
+      <line x1="-50" y1="50" x2="-60" y2="-72"/>
+      <line x1="-40" y1="50" x2="-45" y2="-72"/>
+      <line x1="-30" y1="50" x2="-25" y2="-68"/>
+      <!-- lado derecho: 6 líneas -->
+      <line x1="80" y1="50" x2="90" y2="-60"/>
+      <line x1="70" y1="50" x2="85" y2="-65"/>
+      <line x1="60" y1="50" x2="75" y2="-70"/>
+      <line x1="50" y1="50" x2="60" y2="-72"/>
+      <line x1="40" y1="50" x2="45" y2="-72"/>
+      <line x1="30" y1="50" x2="25" y2="-68"/>
+    </g>
+    <!-- Punto de unión inferior -->
+    <circle cx="0" cy="50" r="6" fill="#c4836c"/>
+  </g>
+
+  <!-- Vanessa -->
+  <text x="300" y="380" text-anchor="middle" 
+        font-family="Georgia, serif" font-size="48" 
+        fill="url(#silver)" letter-spacing="16" font-weight="300" opacity="0.9">VANESSA</text>
+
+  <!-- líneas -->
+  <line x1="180" y1="405" x2="420" y2="405" stroke="#c4836c" stroke-width="1.2" opacity="0.5"/>
+  
+  <!-- Make Up as continuous sans -->
+  <text x="300" y="430" text-anchor="middle" 
+        font-family="Helvetica Neue, Arial, sans-serif" font-size="22" 
+        fill="#c4836c" letter-spacing="20" font-weight="300">MAKE UP</text>
+
+  <text x="300" y="465" text-anchor="middle" 
+        font-family="Helvetica Neue, Arial, sans-serif" font-size="11" 
+        fill="#777" letter-spacing="6" font-weight="400">MAQUILLAJE PROFESIONAL</text>
+</svg>

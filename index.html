@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VANESSA MAKE UP</title>
+<style>
+  :root {
+    --rose: #c4836c;
+    --rose-light: #d4956a;
+    --rose-pale: #e8c4b8;
+    --gold: #d4a574;
+    --silver: #e8e8e8;
+    --dark: #1a1a1a;
+    --black: #0d0d0d;
+    --cream: #f7ede2;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--black);
+    color: var(--silver);
+    overflow-x: hidden;
+  }
+  header {
+    position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+    width: calc(100% - 32px); max-width: 1200px;
+    padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+    background: rgba(13, 13, 13, 0.85); backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.06); border-radius: 999px; z-index: 1000;
+  }
+  .logo {
+    font-family: Georgia, serif; font-size: 1.4rem; font-weight: 500;
+    color: var(--rose); letter-spacing: 0.3em; text-transform: uppercase;
+  }
+  nav a {
+    margin: 0 1rem; text-decoration: none; color: var(--silver); font-weight: 300;
+    font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; position: relative;
+    transition: color 0.3s;
+  }
+  nav a::after {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px;
+    background: var(--rose); transition: width 0.4s;
+  }
+  nav a:hover { color: var(--rose); }
+  nav a:hover::after { width: 100%; }
+
+  .hero {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at center, #2a1518 0%, var(--black) 70%);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(196,131,108,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212,165,116,0.05) 0%, transparent 50%);
+    animation: bgShift 15s ease-in-out infinite;
+  }
+  @keyframes bgShift { 0%,100%{opacity:1;} 50%{opacity:0.6;} }
+  .particles { position: absolute; inset: 0; overflow: hidden; }
+  .particle {
+    position: absolute; background: var(--rose); border-radius: 50%; opacity: 0;
+    animation: floatUp linear infinite;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0); opacity: 0; }
+    10% { opacity: 0.6; } 90% { opacity: 0.6; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero-sub {
+    font-family: Georgia, serif; font-style: italic; font-size: 1.3rem;
+    color: var(--rose-pale); letter-spacing: 0.4rem; margin-bottom: 1.5rem;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+  .hero h1 {
+    font-family: Georgia, serif; font-size: 7rem; font-weight: 400;
+    color: var(--rose); letter-spacing: 0.5rem; text-transform: uppercase; line-height: 1;
+    text-shadow: 0 0 80px rgba(196,131,108,0.3);
+    animation: fadeUp 1s ease 0.5s both;
+  }
+  .hero-line {
+    width: 80px; height: 1px; margin: 2rem auto;
+    background: linear-gradient(90deg, transparent, var(--rose), transparent);
+    animation: fadeUp 1s ease 0.7s both;
+  }
+  .hero-desc {
+    font-size: 1rem; font-weight: 300; letter-spacing: 0.3rem; text-transform: uppercase;
+    animation: fadeUp 1s ease 0.9s both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 0.4rem; color: var(--rose); text-transform: uppercase;
+    margin-bottom: 1rem; font-weight: 500;
+  }
+  .section-title {
+    font-family: Georgia, serif; font-size: 3.6rem; font-weight: 400; color: var(--silver);
+    letter-spacing: 0.15rem; line-height: 1.15;
+  }
+  .section-title em { font-style: italic; color: var(--rose); }
+  .section-divider {
+    width: 60px; height: 1px; background: var(--rose); margin: 2rem auto; position: relative;
+  }
+  .section-divider::before {
+    content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    width: 6px; height: 6px; background: var(--rose); border-radius: 50%;
+  }
+
+  section { padding: 7rem 2rem; max-width: 1400px; margin: 0 auto; position: relative; }
+
+  /* Categorías */
+  .cats-row {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+  @media (max-width: 900px) { .cats-row { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .cats-row { grid-template-columns: 1fr; } }
+
+  .cat-block {
+    border: 1px solid rgba(196,131,108,0.15); border-radius: 16px; background: #0a0a0a; overflow: hidden;
+  }
+  .cat-label {
+    font-family: Georgia, serif; font-size: 1.6rem; color: var(--rose);
+    text-align: center; padding: 1.2rem; letter-spacing: 0.1rem; font-weight: 400;
+  }
+  .cover-wrap { position: relative; cursor: pointer; }
+  .cover-wrap img {
+    width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block;
+    filter: brightness(0.9) saturate(0.95); transition: all 0.6s;
+  }
+  .cover-wrap:hover img { filter: brightness(1.05) saturate(1.1); transform: scale(1.03); }
+  .cover-hint {
+    position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);
+    background: rgba(13,13,13,0.7); color: var(--gold); padding: 0.4rem 1rem;
+    border-radius: 999px; font-size: 0.75rem; letter-spacing: 0.15rem; text-transform: uppercase;
+    backdrop-filter: blur(6px); border: 1px solid rgba(212,165,116,0.3);
+    transition: opacity 0.3s;
+  }
+  .cover-wrap:hover .cover-hint { opacity: 0; }
+
+  /* Checkbox hack: gallery */
+  .gal-input { display: none; }
+  .gal-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 1rem;
+    max-height: 0; overflow: hidden; transition: max-height 0.6s ease, opacity 0.4s;
+    opacity: 0;
+  }
+  @media (max-width:1000px){ .gal-grid{ grid-template-columns: repeat(3,1fr); } }
+  @media (max-width:700px){ .gal-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width:450px){ .gal-grid{ grid-template-columns: 1fr; } }
+  .gal-input:checked + .gal-grid {
+    max-height: 3000px; opacity: 1; margin-top: 0.5rem;
+  }
+  .gal-item {
+    position: relative; border-radius: 12px; overflow: hidden; background: #050505;
+    aspect-ratio: 1/1; border: 1px solid rgba(196,131,108,0.1);
+  }
+  .gal-item img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.4s; }
+  .gal-item:hover img { transform: scale(1.06); }
+
+  /* Servicios */
+  #servicios {
+    background: linear-gradient(180deg, transparent, rgba(196,131,108,0.02), transparent);
+  }
+  .cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
+  }
+  .card {
+    background: rgba(255,255,255,0.02); backdrop-filter: blur(10px);
+    border: 1px solid rgba(196,131,108,0.15); border-radius: 20px;
+    padding: 2.2rem 1.8rem; text-align: center; transition: all 0.5s; position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(196,131,108,0.08), transparent); transition: 0.8s;
+  }
+  .card:hover::before { left: 100%; }
+  .card:hover { transform: translateY(-10px) scale(1.02); border-color: var(--rose); background: rgba(196,131,108,0.05); }
+  .card h3 { font-family: Georgia, serif; font-size: 1.3rem; color: var(--rose); letter-spacing: 0.1rem; margin-bottom: 0.8rem; font-weight: 400; }
+  .card p { font-weight: 300; font-size: 0.85rem; color: rgba(232,232,232,0.6); line-height: 1.6; margin-bottom: 1.2rem; }
+  .price { font-family: Georgia, serif; font-size: 1.8rem; color: var(--silver); letter-spacing: 0.1rem; }
+
+  /* Contacto */
+  #contacto { text-align: center; padding: 10rem 2rem; position: relative; }
+  #contacto::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at center, rgba(196,131,108,0.1), transparent 70%);
+  }
+  #contacto h2 { font-family: Georgia, serif; font-size: 4.5rem; font-weight: 400; color: var(--silver); letter-spacing: 0.2rem; position: relative; }
+  #contacto h2 em { font-style: italic; color: var(--rose); }
+  .cta {
+    display: inline-block; background: transparent; color: var(--rose); padding: 1.2rem 4rem;
+    border: 1px solid var(--rose); font-size: 0.9rem; letter-spacing: 0.3rem; text-transform: uppercase;
+    cursor: pointer; transition: all 0.4s; position: relative; overflow: hidden; text-decoration: none; font-weight: 500;
+    margin-top: 2rem;
+  }
+  .cta:hover { background: var(--rose); color: var(--black); }
+
+  footer {
+    text-align: center; padding: 3rem; background: var(--black);
+    border-top: 1px solid rgba(196,131,108,0.1);
+  }
+  .footer-logo { font-family: Georgia, serif; font-size: 1.5rem; color: var(--rose); letter-spacing: 0.4rem; margin-bottom: 1rem; }
+  .footer-text { font-size: 0.75rem; color: rgba(232,232,232,0.4); letter-spacing: 0.2rem; text-transform: uppercase; }
+
+  .editable {
+    outline: 2px dashed transparent; outline-offset: 6px; cursor: text; transition: outline 0.3s; border-radius: 4px;
+    padding: 0 4px;
+  }
+  .editable:hover { outline-color: rgba(196,131,108,0.3); }
+  .editable:focus { outline-color: rgba(196,131,108,0.6); background: rgba(255,255,255,0.03); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo editable" contenteditable="true">VANESSA MAKE UP</div>
+  <nav>
+    <a href="#categorias">Categorías</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="editable" contenteditable="true">
+      <div class="hero-sub">Maquillaje Profesional</div>
+      <h1>Vanessa</h1>
+      <div class="hero-line"></div>
+      <div class="hero-desc">Tu piel, tu estilo, tu momento</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
+    <div style="position:relative; aspect-ratio:1;">
+      <div style="position:absolute; inset:0; border:1px solid rgba(196,131,108,0.3); border-radius:50%; animation: rotate 30s linear infinite;"></div>
+      <div style="position:absolute; inset:40px; border:1px solid rgba(212,165,116,0.2); border-radius:50%; background:radial-gradient(circle, rgba(196,131,108,0.05), transparent); display:flex; align-items:center; justify-content:center;">
+        <svg width="180" height="180" viewBox="0 0 200 200">
+          <defs>
+            <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#d4956a"/>
+              <stop offset="50%" stop-color="#c4836c"/>
+              <stop offset="100%" stop-color="#8a5a45"/>
+            </linearGradient>
+          </defs>
+          <text x="100" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="url(#g)" letter-spacing="6" font-weight="400">V+M</text>
+          <path d="M60,110 Q85,105 100,115 Q115,125 140,115" stroke="url(#g)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <text x="100" y="145" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c4836c" letter-spacing="4" font-weight="300">MAKE UP</text>
+        </svg>
+      </div>
+    </div>
+    <div>
+      <div class="editable" contenteditable="true">
+        <h3 style="font-family:Georgia,serif; font-size:2rem; color:var(--rose); margin-bottom:2rem; font-style:italic;">Elegancia serena, oficio impecable</h3>
+        <p style="font-weight:300; line-height:1.9; color:rgba(232,232,232,0.75); font-size:0.95rem; margin-bottom:1.5rem;">Vanessa Make Up nace de la convicción de que cada rostro cuenta una historia. Rose dorado sobre negro: lujo contenido, sin excesos, con memoria.</p>
+        <p style="font-weight:300; line-height:1.9; color:rgba(232,232,232,0.75); font-size:0.95rem; margin-bottom:1.5rem;">Especialistas en novias, quinceañeras, eventos sociales y expresiones artísticas.</p>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(196,131,108,0.2);">
+        <div><h4 class="editable" contenteditable="true" style="font-family:Georgia,serif; font-size:2.5rem; color:var(--rose); font-weight:400;">500+</h4><p style="font-size:0.75rem; letter-spacing:0.2rem; text-transform:uppercase; color:rgba(232,232,232,0.5); margin-top:0.5rem;">Eventos</p></div>
+        <div><h4 class="editable" contenteditable="true" style="font-family:Georgia,serif; font-size:2.5rem; color:var(--rose); font-weight:400;">15</h4><p style="font-size:0.75rem; letter-spacing:0.2rem; text-transform:uppercase; color:rgba(232,232,232,0.5); margin-top:0.5rem;">Años Experiencia</p></div>
+        <div><h4 class="editable" contenteditable="true" style="font-family:Georgia,serif; font-size:2.5rem; color:var(--rose); font-weight:400;">100%</h4><p style="font-size:0.75rem; letter-spacing:0.2rem; text-transform:uppercase; color:rgba(232,232,232,0.5); margin-top:0.5rem;">Compromiso</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORÍAS: FILA 1 -->
+<section id="categorias">
+  <div class="section-header">
+    <div class="section-label">Catálogo</div>
+    <h2 class="section-title">Categorías <em>de estilo</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="cats-row">
+
+    <!-- 15 Años -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">15 Años</div>
+      <label class="cover-wrap">
+        <input type="checkbox" class="gal-input">
+        <img src="maquillaje-vanessa/15 años.jpg" alt="15 Años">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años1.jpg" alt="15 años1"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años2.jpg" alt="15 años2"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años3.jpg" alt="15 años3"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años4.jpg" alt="15 años4"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años5.jpg" alt="15 años5"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años6.jpg" alt="15 años6"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años7.jpg" alt="15 años7"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años8.jpg" alt="15 años8"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años9.jpg" alt="15 años9"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años10.jpg" alt="15 años10"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años11.jpg" alt="15 años11"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años12.jpg" alt="15 años12"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años13.jpg" alt="15 años13"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años14.jpg" alt="15 años14"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/15 años15.jpg" alt="15 años15"></div>
+      </div>
+    </div>
+
+    <!-- Novias -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Novias</div>
+      <label class="cover-wrap">
+        <input type="checkbox" class="gal-input">
+        <img src="maquillaje-vanessa/novias.jpg" alt="Novias">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="maquillaje-vanessa/novias1.jpg" alt="Novias1"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/novias2.jpg" alt="Novias2"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/novias3.jpg" alt="Novias3"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/novias4.jpg" alt="Novias4"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/novias5.jpg" alt="Novias5"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/novias6.jpg" alt="Novias6"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/novias7.jpg" alt="Novias7"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/novias8.jpg" alt="Novias8"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/novias9.jpg" alt="Novias9"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/novias10.jpg" alt="Novias10"></div>
+      </div>
+    </div>
+
+    <!-- Noche Glam -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Noche Glam</div>
+      <label class="cover-wrap">
+        <input type="checkbox" class="gal-input">
+        <img src="maquillaje-vanessa/noche glam.jpg" alt="Noche Glam">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="maquillaje-vanessa/noche glam1.jpg" alt="Noche Glam1"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/noche glam2.jpg" alt="Noche Glam2"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/noche glam3.jpg" alt="Noche Glam3"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/noche glam4.jpg" alt="Noche Glam4"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/noche glam5.jpg" alt="Noche Glam5"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/noche glam6.jpg" alt="Noche Glam6"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/noche glam7.jpg" alt="Noche Glam7"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/noche galm 8.jpg" alt="Noche Glam8"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CATEGORÍAS: FILA 2 -->
+<section id="categorias-2">
+  <div class="cats-row">
+
+    <!-- Artístico -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Artístico</div>
+      <label class="cover-wrap">
+        <input type="checkbox" class="gal-input">
+        <img src="maquillaje-vanessa/artistico.jpg" alt="Artístico">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="maquillaje-vanessa/artistico1.jpg" alt="Artístico1"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/artistico2.jpg" alt="Artístico2"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/artistico3.jpg" alt="Artístico3"></div>
+      </div>
+    </div>
+
+    <!-- Halloween -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Halloween</div>
+      <label class="cover-wrap">
+        <input type="checkbox" class="gal-input">
+        <img src="maquillaje-vanessa/hallowen.jpg" alt="Halloween">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="maquillaje-vanessa/hallowen1.jpg" alt="Halloween1"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/hallowen2.jpg" alt="Halloween2"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/hallowen3.jpg" alt="Halloween3"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/hallowen4.jpg" alt="Halloween4"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/hallowen5.jpg" alt="Halloween5"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/hallowen6.webp" alt="Halloween6"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/hallowen7.jpg" alt="Halloween7"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/hallowen8.jpg" alt="Halloween8"></div>
+      </div>
+    </div>
+
+    <!-- Grupos de Danza -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Grupos de Danza</div>
+      <label class="cover-wrap">
+        <input type="checkbox" class="gal-input">
+        <img src="maquillaje-vanessa/danzas.jpg" alt="Danzas">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="maquillaje-vanessa/danzas1.jpg" alt="Danzas1"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/danzas2.jpg" alt="Danzas2"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/danzas3.jpg" alt="Danzas3"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/danzas4.jpg" alt="Danzas4"></div>
+        <div class="gal-item"><img src="maquillaje-vanessa/danzas5.jpg" alt="Danzas5"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-header">
+    <div class="section-label">Servicios</div>
+    <h2 class="section-title editable" contenteditable="true">Paquetes <em>exclusivos</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="cards">
+    <div class="card"><h3 class="editable" contenteditable="true">Soft Glam</h3><p>Pestañas incluidas</p><div class="price editable" contenteditable="true">100.000</div></div>
+    <div class="card"><h3 class="editable" contenteditable="true">Full Glam</h3><p>Prep + glitter + retoque labial</p><div class="price editable" contenteditable="true">110.000</div></div>
+    <div class="card"><h3 class="editable" contenteditable="true">Pack Novia</h3><p>Prep + prueba + maquillaje + peinado + glitter</p><div class="price editable" contenteditable="true">450.000</div></div>
+    <div class="card"><h3 class="editable" contenteditable="true">Pack Evento</h3><p>Prep + prueba + maquillaje + retoque + pestañas</p><div class="price editable" contenteditable="true">250.000</div></div>
+    <div class="card"><h3 class="editable" contenteditable="true">Prueba</h3><p>Ensayo previo al evento</p><div class="price editable" contenteditable="true">200.000</div></div>
+    <div class="card"><h3 class="editable" contenteditable="true">Glitter Bar</h3><p>Glitter, neon, gemas, tatuajes y strass</p><div class="price editable" contenteditable="true">270.000</div></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <h2 class="editable" contenteditable="true">Reserva tu <em>cita</em></h2>
+  <div class="section-divider"></div>
+  <p style="max-width:520px; margin: 0 auto 2.5rem; font-weight:300; line-height:1.9; color:rgba(232,232,232,0.65);">Escribinos para coordinar fecha, servicio y asesoramiento personalizado.</p>
+  <a href="#" class="cta">Agendar Ahora</a>
+  <div style="margin-top:4rem; display:flex; justify-content:center; gap:3rem; flex-wrap:wrap; font-size:0.85rem; letter-spacing:0.15rem; color:rgba(232,232,232,0.6);">
+    <span>📍 <strong style="color:var(--rose);">Bogotá, Colombia</strong></span>
+    <span>📞 <strong style="color:var(--rose);">+57 000 000 0000</strong></span>
+    <span>📧 <strong style="color:var(--rose);">hola@vanessamakeup.co</strong></span>
+    <span>📸 <strong style="color:var(--rose);">@vanessamakeup</strong></span>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">VANESSA MAKE UP</div>
+  <p class="footer-text">© 2026 — Maquillaje Profesional</p>
+</footer>
+
+<script>
+  // Particles
+  const pc = document.getElementById('particles');
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random()*100+'%';
+    p.style.animationDuration = (Math.random()*10+10)+'s';
+    p.style.animationDelay = (Math.random()*10)+'s';
+    const s = (Math.random()*3+1)+'px';
+    p.style.width = s; p.style.height = s;
+    pc.appendChild(p);
+  }
+</script>
+</body>
+</html>
