@@ -41,7 +41,7 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .about-text h3{font-family:Georgia,serif;font-size:2rem;color:var(--rose);margin-bottom:2rem;font-style:italic;font-weight:400}
 .about-text p{font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:1.5rem}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2);text-align:center}
 .stats h4{font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400}
 .stats p{font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem}
 .cats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
@@ -104,15 +104,12 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative}
 footer{text-align:center;padding:3rem;background:var(--black);border-top:1px solid rgba(196,131,108,.08)}
 .footer-logo{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);letter-spacing:.4rem;margin-bottom:1rem}
 .footer-text{font-size:.72rem;color:rgba(232,232,232,.35);letter-spacing:.18rem;text-transform:uppercase}
-.editable{outline:2px dashed transparent;outline-offset:6px;cursor:text;transition:outline .3s;border-radius:4px;padding:0 4px}
-.editable:hover{outline-color:rgba(196,131,108,.3)}
-.editable:focus{outline-color:rgba(196,131,108,.6);background:rgba(255,255,255,.03)}
 @media(max-width:768px){.hero h1{font-size:3.5rem}.section-title{font-size:2.2rem}#contacto h2{font-size:2.5rem}.cards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo editable" contenteditable="true">VANESSA MAKE UP</div>
+  <div class="logo">VANESSA MAKE UP</div>
   <nav>
     <a href="#categorias">Categorías</a>
     <a href="#servicios">Servicios</a>
@@ -124,7 +121,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
   <div class="hero-bg"></div>
   <div class="particles" id="particles"></div>
   <div class="hero-content">
-    <div class="editable" contenteditable="true">
+    <div>
       <div class="hero-sub">Maquillaje Profesional</div>
       <h1>Vanessa</h1>
       <div class="hero-line"></div>
@@ -142,15 +139,15 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
       </div>
     </div>
     <div class="about-text">
-      <div class="editable" contenteditable="true">
+      <div>
         <h3>Elegancia serena, oficio impecable</h3>
         <p>Vanessa Make Up nace de la convicción de que cada rostro cuenta una historia. Rose dorado sobre negro: lujo contenido, sin excesos, con memoria.</p>
         <p>Especialistas en novias, quinceañeras, eventos sociales y expresiones artísticas. Cada servicio incluye preparación de piel profesional y productos de alta gama.</p>
       </div>
       <div class="stats">
-        <div><h4 class="editable" contenteditable="true">500+</h4><p>Eventos</p></div>
-        <div><h4 class="editable" contenteditable="true">5</h4><p>Años Experiencia</p></div>
-        <div><h4 class="editable" contenteditable="true">100%</h4><p>Compromiso</p></div>
+        <div><h4>500+</h4><p>Eventos</p></div>
+        <div><h4>5</h4><p>Años Experiencia</p></div>
+        <div><h4>100%</h4><p>Compromiso</p></div>
       </div>
     </div>
   </div>
@@ -166,7 +163,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
   <div class="cats-row">
     <!-- 15 AÑOS -->
     <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">15 Años</div>
+      <div class="cat-label">15 Años</div>
       <input type="checkbox" class="gal-toggle" id="gal-15-anios">
       <label class="cover-label" for="gal-15-anios">
         <img src="photos/15-anios/cover.jpg" alt="15 Años">
@@ -203,7 +200,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
 
     <!-- NOVIAS -->
     <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Novias</div>
+      <div class="cat-label">Novias</div>
       <input type="checkbox" class="gal-toggle" id="gal-novias">
       <label class="cover-label" for="gal-novias">
         <img src="photos/novias/cover.jpg" alt="Novias">
@@ -233,7 +230,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
 
     <!-- NOCHE GLAM -->
     <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Noche Glam</div>
+      <div class="cat-label">Noche Glam</div>
       <input type="checkbox" class="gal-toggle" id="gal-noche-glam">
       <label class="cover-label" for="gal-noche-glam">
         <img src="photos/noche-glam/cover.jpg" alt="Noche Glam">
@@ -254,7 +251,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
 
     <!-- ARTÍSTICO -->
     <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Artístico</div>
+      <div class="cat-label">Artístico</div>
       <input type="checkbox" class="gal-toggle" id="gal-artistico">
       <label class="cover-label" for="gal-artistico">
         <img src="photos/artistico/cover.jpg" alt="Artístico">
@@ -279,7 +276,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
 
     <!-- HALLOWEEN -->
     <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Halloween</div>
+      <div class="cat-label">Halloween</div>
       <input type="checkbox" class="gal-toggle" id="gal-hallowen">
       <label class="cover-label" for="gal-hallowen">
         <img src="photos/hallowen/cover.jpg" alt="Halloween">
@@ -300,7 +297,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
 
     <!-- PEINADOS -->
     <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Peinados</div>
+      <div class="cat-label">Peinados</div>
       <input type="checkbox" class="gal-toggle" id="gal-peinados">
       <label class="cover-label" for="gal-peinados">
         <img src="photos/peinados/cover.jpg" alt="Peinados">
@@ -322,57 +319,57 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
 <section id="servicios">
   <div class="section-header">
     <div class="section-label">Servicios</div>
-    <h2 class="section-title editable" contenteditable="true">Nuestros <em>servicios</em></h2>
+    <h2 class="section-title">Nuestros <em>servicios</em></h2>
     <div class="section-divider"></div>
   </div>
   <div class="service-group">
-    <div class="service-group-title editable" contenteditable="true">Tratamientos Faciales</div>
+    <div class="service-group-title">Tratamientos Faciales</div>
     <div class="cards">
-      <div class="card"><h3 class="editable" contenteditable="true">Limpieza Facial</h3><ul><li class="editable" contenteditable="true">Limpieza profunda de poros</li><li class="editable" contenteditable="true">Exfoliación suave</li><li class="editable" contenteditable="true">Tónico e hidratación</li></ul><div class="price editable" contenteditable="true">$60.000</div></div>
-      <div class="card"><h3 class="editable" contenteditable="true">Limpieza Facial Profunda</h3><ul><li class="editable" contenteditable="true">Limpieza + extracción</li><li class="editable" contenteditable="true">Mascarilla purificante</li><li class="editable" contenteditable="true">Hidratación intensiva</li></ul><div class="price editable" contenteditable="true">$80.000</div></div>
-      <div class="card"><h3 class="editable" contenteditable="true">Hidratación Profunda</h3><ul><li class="editable" contenteditable="true">Sero hidratante premium</li><li class="editable" contenteditable="true">Mascarilla nutritiva</li><li class="editable" contenteditable="true">Masaje facial relajante</li></ul><div class="price editable" contenteditable="true">$90.000</div></div>
+      <div class="card"><h3>Limpieza Facial</h3><ul><li>Limpieza profunda de poros</li><li>Exfoliación suave</li><li>Tónico e hidratación</li></ul><div class="price">$60.000</div></div>
+      <div class="card"><h3>Limpieza Facial Profunda</h3><ul><li>Limpieza + extracción</li><li>Mascarilla purificante</li><li>Hidratación intensiva</li></ul><div class="price">$80.000</div></div>
+      <div class="card"><h3>Hidratación Profunda</h3><ul><li>Sero hidratante premium</li><li>Mascarilla nutritiva</li><li>Masaje facial relajante</li></ul><div class="price">$90.000</div></div>
     </div>
   </div>
   <div class="service-group">
-    <div class="service-group-title editable" contenteditable="true">Maquillaje</div>
+    <div class="service-group-title">Maquillaje</div>
     <div class="cards">
-      <div class="card"><h3 class="editable" contenteditable="true">Soft Glam</h3><ul><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Maquillaje natural luminoso</li><li class="editable" contenteditable="true">Pestañas incluidas</li></ul><div class="price editable" contenteditable="true">$100.000</div></div>
-      <div class="card"><h3 class="editable" contenteditable="true">Full Glam</h3><ul><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Pestañas incluidas</li><li class="editable" contenteditable="true">Glitter corporal</li><li class="editable" contenteditable="true">Retoque labial</li></ul><div class="price editable" contenteditable="true">$110.000</div></div>
+      <div class="card"><h3>Soft Glam</h3><ul><li>Preparación de piel</li><li>Maquillaje natural luminoso</li><li>Pestañas incluidas</li></ul><div class="price">$100.000</div></div>
+      <div class="card"><h3>Full Glam</h3><ul><li>Preparación de piel</li><li>Pestañas incluidas</li><li>Glitter corporal</li><li>Retoque labial</li></ul><div class="price">$110.000</div></div>
     </div>
   </div>
   <div class="service-group">
-    <div class="service-group-title editable" contenteditable="true">Quinceañeras y Novias</div>
+    <div class="service-group-title">Quinceañeras y Novias</div>
     <div class="cards">
-      <div class="card"><h3 class="editable" contenteditable="true">Paquete Básico</h3><ul><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Maquillaje día del evento</li><li class="editable" contenteditable="true">Pestañas</li></ul><div class="price editable" contenteditable="true">$130.000</div></div>
-      <div class="card"><h3 class="editable" contenteditable="true">Paquete con Pestañas</h3><ul><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Prueba de maquillaje</li><li class="editable" contenteditable="true">Maquillaje día del evento</li><li class="editable" contenteditable="true">Pestañas</li></ul><div class="price editable" contenteditable="true">$200.000</div></div>
-      <div class="card"><h3 class="editable" contenteditable="true">Paquete Hidratación Previa</h3><ul><li class="editable" contenteditable="true">Hidratación facial previa al evento</li><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Maquillaje día del evento</li><li class="editable" contenteditable="true">Pestañas</li><li class="editable" contenteditable="true">Kit de retoque</li></ul><div class="price editable" contenteditable="true">$160.000</div></div>
-      <div class="card"><h3 class="editable" contenteditable="true">Paquete Completo</h3><ul><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Maquillaje día del evento</li><li class="editable" contenteditable="true">Pestañas</li><li class="editable" contenteditable="true">Peinado</li></ul><div class="price editable" contenteditable="true">$230.000</div></div>
-      <div class="card"><h3 class="editable" contenteditable="true">Paquete Premium</h3><ul><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Prueba de maquillaje</li><li class="editable" contenteditable="true">Maquillaje día del evento</li><li class="editable" contenteditable="true">Peinado día del evento</li><li class="editable" contenteditable="true">Prueba de maquillaje y peinado</li><li class="editable" contenteditable="true">Kit de retoque</li><li class="editable" contenteditable="true">Pestañas</li><li class="editable" contenteditable="true">Glitter corporal</li></ul><div class="price editable" contenteditable="true">$400.000</div></div>
-      <div class="card"><h3 class="editable" contenteditable="true">Paquete Hidratación Completo</h3><ul><li class="editable" contenteditable="true">Hidratación facial previa al evento</li><li class="editable" contenteditable="true">Prueba de maquillaje</li><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Maquillaje día del evento</li><li class="editable" contenteditable="true">Peinado día del evento</li><li class="editable" contenteditable="true">Pestañas</li><li class="editable" contenteditable="true">Kit de retoque</li><li class="editable" contenteditable="true">Glitter corporal</li></ul><div class="price editable" contenteditable="true">$450.000</div></div>
-      <div class="card"><h3 class="editable" contenteditable="true">Paquete Hidratación + Pestañas</h3><ul><li class="editable" contenteditable="true">Hidratación facial previa al evento</li><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Prueba de maquillaje</li><li class="editable" contenteditable="true">Maquillaje día del evento</li><li class="editable" contenteditable="true">Kit de retoque</li><li class="editable" contenteditable="true">Pestañas</li></ul><div class="price editable" contenteditable="true">$250.000</div></div>
+      <div class="card"><h3>Paquete Básico</h3><ul><li>Preparación de piel</li><li>Maquillaje día del evento</li><li>Pestañas</li></ul><div class="price">$130.000</div></div>
+      <div class="card"><h3>Paquete con Pestañas</h3><ul><li>Preparación de piel</li><li>Prueba de maquillaje</li><li>Maquillaje día del evento</li><li>Pestañas</li></ul><div class="price">$200.000</div></div>
+      <div class="card"><h3>Paquete Hidratación Previa</h3><ul><li>Hidratación facial previa al evento</li><li>Preparación de piel</li><li>Maquillaje día del evento</li><li>Pestañas</li><li>Kit de retoque</li></ul><div class="price">$160.000</div></div>
+      <div class="card"><h3>Paquete Completo</h3><ul><li>Preparación de piel</li><li>Maquillaje día del evento</li><li>Pestañas</li><li>Peinado</li></ul><div class="price">$230.000</div></div>
+      <div class="card"><h3>Paquete Premium</h3><ul><li>Preparación de piel</li><li>Prueba de maquillaje</li><li>Maquillaje día del evento</li><li>Peinado día del evento</li><li>Prueba de maquillaje y peinado</li><li>Kit de retoque</li><li>Pestañas</li><li>Glitter corporal</li></ul><div class="price">$400.000</div></div>
+      <div class="card"><h3>Paquete Hidratación Completo</h3><ul><li>Hidratación facial previa al evento</li><li>Prueba de maquillaje</li><li>Preparación de piel</li><li>Maquillaje día del evento</li><li>Peinado día del evento</li><li>Pestañas</li><li>Kit de retoque</li><li>Glitter corporal</li></ul><div class="price">$450.000</div></div>
+      <div class="card"><h3>Paquete Hidratación + Pestañas</h3><ul><li>Hidratación facial previa al evento</li><li>Preparación de piel</li><li>Prueba de maquillaje</li><li>Maquillaje día del evento</li><li>Kit de retoque</li><li>Pestañas</li></ul><div class="price">$250.000</div></div>
     </div>
   </div>
   <div class="service-group">
-    <div class="service-group-title editable" contenteditable="true">Glitter Bar — Día del Evento</div>
+    <div class="service-group-title">Glitter Bar — Día del Evento</div>
     <div class="cards">
       <div class="card glitter-card">
         <div class="glitter-badge">✨ Servicio Especial</div>
-        <h3 class="editable" contenteditable="true">Glitter Bar — 1h 30min</h3>
-        <ul><li class="editable" contenteditable="true">Maquillaje con glitter de colores</li><li class="editable" contenteditable="true">Maquillaje neón</li><li class="editable" contenteditable="true">Gemas faciales</li><li class="editable" contenteditable="true">Tatuajes temporales</li><li class="editable" contenteditable="true">Strass (pedrería facial)</li><li class="editable" contenteditable="true">Dos maquilladoras</li></ul>
-        <div class="price editable" contenteditable="true">$270.000 <small>1 hora 30 minutos</small></div>
+        <h3>Glitter Bar — 1h 30min</h3>
+        <ul><li>Maquillaje con glitter de colores</li><li>Maquillaje neón</li><li>Gemas faciales</li><li>Tatuajes temporales</li><li>Strass (pedrería facial)</li><li>Dos maquilladoras</li></ul>
+        <div class="price">$270.000 <small>1 hora 30 minutos</small></div>
       </div>
       <div class="card glitter-card">
         <div class="glitter-badge">✨ Servicio Especial</div>
-        <h3 class="editable" contenteditable="true">Glitter Bar — 2 horas</h3>
-        <ul><li class="editable" contenteditable="true">Maquillaje con glitter de colores</li><li class="editable" contenteditable="true">Maquillaje neón</li><li class="editable" contenteditable="true">Gemas faciales</li><li class="editable" contenteditable="true">Tatuajes temporales</li><li class="editable" contenteditable="true">Strass (pedrería facial)</li><li class="editable" contenteditable="true">Dos maquilladoras</li></ul>
-        <div class="price editable" contenteditable="true">$320.000 <small>2 horas</small></div>
+        <h3>Glitter Bar — 2 horas</h3>
+        <ul><li>Maquillaje con glitter de colores</li><li>Maquillaje neón</li><li>Gemas faciales</li><li>Tatuajes temporales</li><li>Strass (pedrería facial)</li><li>Dos maquilladoras</li></ul>
+        <div class="price">$320.000 <small>2 horas</small></div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="contacto">
-  <h2 class="editable" contenteditable="true">Reserva tu <em>cita</em></h2>
+  <h2>Reserva tu <em>cita</em></h2>
   <div class="section-divider"></div>
   <p style="max-width:520px;margin:0 auto 2.5rem;font-weight:300;line-height:1.9;color:rgba(232,232,232,.65)">Escribinos para coordinar fecha, servicio y asesoramiento personalizado.</p>
   <a href="#" class="cta">Agendar Ahora</a>
