@@ -10,8 +10,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--black);color:var(--silver);overflow-x:hidden}
 header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:1200px;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,13,0.88);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:999px;z-index:1000}
-.logo{height:48px;display:flex;align-items:center}
-.logo-img{height:48px;width:auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.logo{font-family:Georgia,serif;font-size:1.4rem;font-weight:500;color:var(--rose);letter-spacing:.3em;text-transform:uppercase}
 nav a{margin:0 1rem;text-decoration:none;color:var(--silver);font-weight:300;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;position:relative;transition:color .3s}
 nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--rose);transition:width .4s}
 nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
@@ -26,7 +25,6 @@ nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
 .hero h1{font-family:Georgia,serif;font-size:7rem;font-weight:400;color:var(--rose);letter-spacing:.5rem;text-transform:uppercase;line-height:1;text-shadow:0 0 80px rgba(196,131,108,.3);animation:fadeUp 1s ease .5s both}
 .hero-line{width:80px;height:1px;margin:2rem auto;background:linear-gradient(90deg,transparent,var(--rose),transparent);animation:fadeUp 1s ease .7s both}
 .hero-desc{font-size:1rem;font-weight:300;letter-spacing:.3rem;text-transform:uppercase;animation:fadeUp 1s ease .9s both}
-.hero-logo{width:500px;max-width:80vw;height:auto;margin:1rem auto;filter:drop-shadow(0 4px 20px rgba(196,131,108,.3));animation:fadeUp 1s ease .5s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .section-header{text-align:center;margin-bottom:4rem}
 .section-label{font-size:.75rem;letter-spacing:.4rem;color:var(--rose);text-transform:uppercase;margin-bottom:1rem;font-weight:500}
@@ -113,7 +111,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
 </head>
 <body>
 <header>
-  <div class="logo"><img src="logo.svg" alt="VANESSA MAKE UP" class="logo-img"></div>
+  <div class="logo editable" contenteditable="true">VANESSA MAKE UP</div>
   <nav>
     <a href="#categorias">Categorías</a>
     <a href="#servicios">Servicios</a>
@@ -127,7 +125,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
   <div class="hero-content">
     <div class="editable" contenteditable="true">
       <div class="hero-sub">Maquillaje Profesional</div>
-      <img src="logo.svg" alt="VANESSA MAKE UP" class="hero-logo">
+      <h1>Vanessa</h1>
       <div class="hero-line"></div>
       <div class="hero-desc">Tu piel, tu estilo, tu momento</div>
     </div>
