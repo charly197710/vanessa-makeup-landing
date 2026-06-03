@@ -5,96 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VANESSA MAKE UP</title>
 <style>
-  :root{--rose:#c4836c;--rose-light:#d4956a;--rose-pale:#e8c4b8;--gold:#d4a574;--silver:#e8e8e8;--dark:#1a1a1a;--black:#0d0d0d;--cream:#f7ede2}
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--black);color:var(--silver);overflow-x:hidden}
-  header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:1200px;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,13,0.85);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,0.06);border-radius:999px;z-index:1000}
-  .logo{font-family:Georgia,serif;font-size:1.4rem;font-weight:500;color:var(--rose);letter-spacing:.3em;text-transform:uppercase}
-  nav a{margin:0 1rem;text-decoration:none;color:var(--silver);font-weight:300;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;position:relative;transition:color .3s}
-  nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--rose);transition:width .4s}
-  nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
-  .hero{min-height:100vh;background:radial-gradient(ellipse at center,#2a1518 0%,var(--black) 70%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(196,131,108,.08) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(212,165,116,.05) 0%,transparent 50%);animation:bgShift 15s ease-in-out infinite}
-  @keyframes bgShift{0%,100%{opacity:1}50%{opacity:.6}}
-  .particles{position:absolute;inset:0;overflow:hidden}
-  .particle{position:absolute;background:var(--rose);border-radius:50%;opacity:0;animation:floatUp linear infinite}
-  @keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) scale(1);opacity:0}}
-  .hero-content{position:relative;z-index:2}
-  .hero-sub{font-family:Georgia,serif;font-style:italic;font-size:1.3rem;color:var(--rose-pale);letter-spacing:.4rem;margin-bottom:1.5rem;animation:fadeUp 1s ease .3s both}
-  .hero h1{font-family:Georgia,serif;font-size:7rem;font-weight:400;color:var(--rose);letter-spacing:.5rem;text-transform:uppercase;line-height:1;text-shadow:0 0 80px rgba(196,131,108,.3);animation:fadeUp 1s ease .5s both}
-  .hero-line{width:80px;height:1px;margin:2rem auto;background:linear-gradient(90deg,transparent,var(--rose),transparent);animation:fadeUp 1s ease .7s both}
-  .hero-desc{font-size:1rem;font-weight:300;letter-spacing:.3rem;text-transform:uppercase;animation:fadeUp 1s ease .9s both}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-  .section-header{text-align:center;margin-bottom:4rem}
-  .section-label{font-size:.75rem;letter-spacing:.4rem;color:var(--rose);text-transform:uppercase;margin-bottom:1rem;font-weight:500}
-  .section-title{font-family:Georgia,serif;font-size:3.6rem;font-weight:400;color:var(--silver);letter-spacing:.15rem;line-height:1.15}
-  .section-title em{font-style:italic;color:var(--rose)}
-  .section-divider{width:60px;height:1px;background:var(--rose);margin:2rem auto;position:relative}
-  .section-divider::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--rose);border-radius:50%}
-  section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative}
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
-  .about-circle{position:relative;aspect-ratio:1}
-  .about-circle .ring1{position:absolute;inset:0;border:1px solid rgba(196,131,108,.3);border-radius:50%;animation:rotate 30s linear infinite}
-  .about-circle .ring2{position:absolute;inset:40px;border:1px solid rgba(212,165,116,.2);border-radius:50%;background:radial-gradient(circle,rgba(196,131,108,.05),transparent);display:flex;align-items:center;justify-content:center}
-  @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-  .about-text h3{font-family:Georgia,serif;font-size:2rem;color:var(--rose);margin-bottom:2rem;font-style:italic;font-weight:400}
-  .about-text p{font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:1.5rem}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2)}
-  .stats h4{font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400}
-  .stats p{font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem}
-  .cats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:2rem}
-  @media(max-width:900px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:3rem}}
-  @media(max-width:600px){.cats-row{grid-template-columns:1fr}}
-  .cat-block{border:1px solid rgba(196,131,108,.15);border-radius:16px;background:#0a0a0a;overflow:hidden;transition:border-color .3s}
-  .cat-block:hover{border-color:rgba(196,131,108,.3)}
-  .cat-label{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);text-align:center;padding:1.2rem;letter-spacing:.1rem;font-weight:400}
-  .cover-wrap{position:relative;cursor:pointer;display:block}
-  .cover-wrap img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:all .6s}
-  .cover-wrap:hover img{filter:brightness(1.08) saturate(1.1);transform:scale(1.02)}
-  .cover-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(13,13,13,.75);color:var(--gold);padding:.4rem 1.2rem;border-radius:999px;font-size:.72rem;letter-spacing:.15rem;text-transform:uppercase;backdrop-filter:blur(8px);border:1px solid rgba(212,165,116,.3);transition:opacity .3s;pointer-events:none;white-space:nowrap}
-  .cover-wrap:hover .cover-hint{opacity:0}
-  .gal-input{display:none}
-  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:0 1rem 1rem;max-height:0;overflow:hidden;transition:max-height .6s ease,opacity .4s;opacity:0}
-  @media(max-width:1000px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
-  @media(max-width:700px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:450px){.gal-grid{grid-template-columns:1fr}}
-  .gal-input:checked+.gal-grid{max-height:4000px;opacity:1}
-  .gal-item{position:relative;border-radius:10px;overflow:hidden;background:#050505;aspect-ratio:1/1;border:1px solid rgba(196,131,108,.08);transition:border-color .3s}
-  .gal-item:hover{border-color:rgba(196,131,108,.25)}
-  .gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-  .gal-item:hover img{transform:scale(1.05)}
-  #servicios{background:linear-gradient(180deg,transparent,rgba(196,131,108,.02),transparent)}
-  .service-group{margin-bottom:4rem}
-  .service-group-title{font-family:Georgia,serif;font-size:1.8rem;color:var(--rose-pale);text-align:center;margin-bottom:2rem;letter-spacing:.15rem;font-weight:400}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
-  .card{background:rgba(255,255,255,.02);backdrop-filter:blur(10px);border:1px solid rgba(196,131,108,.12);border-radius:18px;padding:2rem 1.6rem;transition:all .5s;position:relative;overflow:hidden;text-align:left}
-  .card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(196,131,108,.06),transparent);transition:.8s}
-  .card:hover::before{left:100%}
-  .card:hover{transform:translateY(-8px) scale(1.01);border-color:var(--rose);background:rgba(196,131,108,.04)}
-  .card h3{font-family:Georgia,serif;font-size:1.25rem;color:var(--rose);letter-spacing:.08rem;margin-bottom:.6rem;font-weight:400}
-  .card ul{list-style:none;margin-bottom:1rem}
-  .card ul li{font-weight:300;font-size:.8rem;color:rgba(232,232,232,.55);line-height:1.65;padding-left:.9rem;position:relative}
-  .card ul li::before{content:'—';position:absolute;left:0;color:var(--rose);opacity:.5}
-  .card .price{font-family:Georgia,serif;font-size:1.7rem;color:var(--silver);letter-spacing:.08rem;text-align:right}
-  .card .price small{font-size:.7rem;color:rgba(232,232,232,.35);display:block;margin-top:.2rem}
-  .glitter-card{border:1px solid rgba(212,165,116,.25);background:linear-gradient(135deg,rgba(196,131,108,.04),rgba(212,165,116,.02))}
-  .glitter-badge{display:inline-block;background:rgba(212,165,116,.12);color:var(--gold);padding:.25rem .7rem;border-radius:999px;font-size:.65rem;letter-spacing:.12rem;text-transform:uppercase;margin-bottom:.8rem;border:1px solid rgba(212,165,116,.25)}
-  #contacto{text-align:center;padding:10rem 2rem;position:relative}
-  #contacto::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(196,131,108,.08),transparent 70%)}
-  #contacto h2{font-family:Georgia,serif;font-size:4.5rem;font-weight:400;color:var(--silver);letter-spacing:.2rem;position:relative}
-  #contacto h2 em{font-style:italic;color:var(--rose)}
-  .cta{display:inline-block;background:transparent;color:var(--rose);padding:1.2rem 4rem;border:1px solid var(--rose);font-size:.88rem;letter-spacing:.28rem;text-transform:uppercase;cursor:pointer;transition:all .4s;position:relative;overflow:hidden;text-decoration:none;font-weight:500;margin-top:2rem}
-  .cta:hover{background:var(--rose);color:var(--black)}
-  .contact-info{margin-top:4rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;font-size:.82rem;letter-spacing:.12rem;color:rgba(232,232,232,.55)}
-  .contact-info strong{color:var(--rose)}
-  footer{text-align:center;padding:3rem;background:var(--black);border-top:1px solid rgba(196,131,108,.08)}
-  .footer-logo{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);letter-spacing:.4rem;margin-bottom:1rem}
-  .footer-text{font-size:.72rem;color:rgba(232,232,232,.35);letter-spacing:.18rem;text-transform:uppercase}
-  .editable{outline:2px dashed transparent;outline-offset:6px;cursor:text;transition:outline .3s;border-radius:4px;padding:0 4px}
-  .editable:hover{outline-color:rgba(196,131,108,.3)}
-  .editable:focus{outline-color:rgba(196,131,108,.6);background:rgba(255,255,255,.03)}
-  @media(max-width:768px){.hero h1{font-size:3.5rem}.section-title{font-size:2.2rem}#contacto h2{font-size:2.5rem}.cards{grid-template-columns:1fr}.contact-info{gap:1.5rem}}
+:root{--rose:#c4836c;--rose-light:#d4956a;--rose-pale:#e8c4b8;--gold:#d4a574;--silver:#e8e8e8;--dark:#1a1a1a;--black:#0d0d0d}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--black);color:var(--silver);overflow-x:hidden}
+header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:1200px;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,13,0.88);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:999px;z-index:1000}
+.logo{font-family:Georgia,serif;font-size:1.4rem;font-weight:500;color:var(--rose);letter-spacing:.3em;text-transform:uppercase}
+nav a{margin:0 1rem;text-decoration:none;color:var(--silver);font-weight:300;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;position:relative;transition:color .3s}
+nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--rose);transition:width .4s}
+nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
+.hero{min-height:100vh;background:radial-gradient(ellipse at center,#2a1518 0%,var(--black) 70%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(196,131,108,.08) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(212,165,116,.05) 0%,transparent 50%);animation:bgShift 15s ease-in-out infinite}
+@keyframes bgShift{0%,100%{opacity:1}50%{opacity:.6}}
+.particles{position:absolute;inset:0;overflow:hidden}
+.particle{position:absolute;background:var(--rose);border-radius:50%;opacity:0;animation:floatUp linear infinite}
+@keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+.hero-content{position:relative;z-index:2}
+.hero-sub{font-family:Georgia,serif;font-style:italic;font-size:1.3rem;color:var(--rose-pale);letter-spacing:.4rem;margin-bottom:1.5rem;animation:fadeUp 1s ease .3s both}
+.hero h1{font-family:Georgia,serif;font-size:7rem;font-weight:400;color:var(--rose);letter-spacing:.5rem;text-transform:uppercase;line-height:1;text-shadow:0 0 80px rgba(196,131,108,.3);animation:fadeUp 1s ease .5s both}
+.hero-line{width:80px;height:1px;margin:2rem auto;background:linear-gradient(90deg,transparent,var(--rose),transparent);animation:fadeUp 1s ease .7s both}
+.hero-desc{font-size:1rem;font-weight:300;letter-spacing:.3rem;text-transform:uppercase;animation:fadeUp 1s ease .9s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-label{font-size:.75rem;letter-spacing:.4rem;color:var(--rose);text-transform:uppercase;margin-bottom:1rem;font-weight:500}
+.section-title{font-family:Georgia,serif;font-size:3.6rem;font-weight:400;color:var(--silver);letter-spacing:.15rem;line-height:1.15}
+.section-title em{font-style:italic;color:var(--rose)}
+.section-divider{width:60px;height:1px;background:var(--rose);margin:2rem auto;position:relative}
+.section-divider::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--rose);border-radius:50%}
+section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.about-circle{position:relative;aspect-ratio:1}
+.about-circle .ring1{position:absolute;inset:0;border:1px solid rgba(196,131,108,.3);border-radius:50%;animation:rotate 30s linear infinite}
+.about-circle .ring2{position:absolute;inset:40px;border:1px solid rgba(212,165,116,.2);border-radius:50%;background:radial-gradient(circle,rgba(196,131,108,.05),transparent);display:flex;align-items:center;justify-content:center}
+@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.about-text h3{font-family:Georgia,serif;font-size:2rem;color:var(--rose);margin-bottom:2rem;font-style:italic;font-weight:400}
+.about-text p{font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:1.5rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2)}
+.stats h4{font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400}
+.stats p{font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem}
+.cats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+@media(max-width:900px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:3rem}}
+@media(max-width:600px){.cats-row{grid-template-columns:1fr}}
+.cat-block{border:1px solid rgba(196,131,108,.12);border-radius:16px;background:#0a0a0a;overflow:hidden;transition:border-color .3s}
+.cat-block:hover{border-color:rgba(196,131,108,.25)}
+.cat-label{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);text-align:center;padding:1.2rem;letter-spacing:.1rem;font-weight:400}
+/* CHECKBOX HACK: el input esta oculto, el label cubre la imagen */
+.gal-toggle{display:none}
+.cover-label{position:relative;cursor:pointer;display:block;overflow:hidden}
+.cover-label img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:all .5s}
+.cover-label:hover img{filter:brightness(1.08) saturate(1.1);transform:scale(1.02)}
+.cover-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(13,13,13,.75);color:var(--gold);padding:.4rem 1.2rem;border-radius:999px;font-size:.7rem;letter-spacing:.15rem;text-transform:uppercase;backdrop-filter:blur(8px);border:1px solid rgba(212,165,116,.3);transition:all .3s;pointer-events:none;white-space:nowrap}
+.cover-label:hover .cover-hint{opacity:0}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:0 1rem 1rem;max-height:0;overflow:hidden;opacity:0;transition:max-height .6s ease,opacity .4s}
+@media(max-width:1000px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:450px){.gal-grid{grid-template-columns:1fr}}
+/* ESTO ES LA CLAVE: cuando el checkbox esta checked, muestra la galeria */
+.gal-toggle:checked ~ .gal-grid{max-height:5000px;opacity:1}
+.gal-item{position:relative;border-radius:10px;overflow:hidden;background:#050505;aspect-ratio:1/1;border:1px solid rgba(196,131,108,.08);transition:border-color .3s}
+.gal-item:hover{border-color:rgba(196,131,108,.25)}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gal-item:hover img{transform:scale(1.05)}
+#servicios{background:linear-gradient(180deg,transparent,rgba(196,131,108,.02),transparent)}
+.service-group{margin-bottom:4rem}
+.service-group-title{font-family:Georgia,serif;font-size:1.8rem;color:var(--rose-pale);text-align:center;margin-bottom:2rem;letter-spacing:.15rem;font-weight:400}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.card{background:rgba(255,255,255,.02);backdrop-filter:blur(10px);border:1px solid rgba(196,131,108,.12);border-radius:18px;padding:2rem 1.6rem;transition:all .5s;position:relative;overflow:hidden;text-align:left}
+.card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(196,131,108,.06),transparent);transition:.8s}
+.card:hover::before{left:100%}
+.card:hover{transform:translateY(-8px) scale(1.01);border-color:var(--rose);background:rgba(196,131,108,.04)}
+.card h3{font-family:Georgia,serif;font-size:1.25rem;color:var(--rose);letter-spacing:.08rem;margin-bottom:.6rem;font-weight:400}
+.card ul{list-style:none;margin-bottom:1rem}
+.card ul li{font-weight:300;font-size:.8rem;color:rgba(232,232,232,.55);line-height:1.65;padding-left:.9rem;position:relative}
+.card ul li::before{content:'—';position:absolute;left:0;color:var(--rose);opacity:.5}
+.card .price{font-family:Georgia,serif;font-size:1.7rem;color:var(--silver);letter-spacing:.08rem;text-align:right}
+.card .price small{font-size:.7rem;color:rgba(232,232,232,.35);display:block;margin-top:.2rem}
+.glitter-card{border:1px solid rgba(212,165,116,.25);background:linear-gradient(135deg,rgba(196,131,108,.04),rgba(212,165,116,.02))}
+.glitter-badge{display:inline-block;background:rgba(212,165,116,.12);color:var(--gold);padding:.25rem .7rem;border-radius:999px;font-size:.65rem;letter-spacing:.12rem;text-transform:uppercase;margin-bottom:.8rem;border:1px solid rgba(212,165,116,.25)}
+#contacto{text-align:center;padding:10rem 2rem;position:relative}
+#contacto::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(196,131,108,.08),transparent 70%)}
+#contacto h2{font-family:Georgia,serif;font-size:4.5rem;font-weight:400;color:var(--silver);letter-spacing:.2rem;position:relative}
+#contacto h2 em{font-style:italic;color:var(--rose)}
+.cta{display:inline-block;background:transparent;color:var(--rose);padding:1.2rem 4rem;border:1px solid var(--rose);font-size:.88rem;letter-spacing:.28rem;text-transform:uppercase;cursor:pointer;transition:all .4s;position:relative;overflow:hidden;text-decoration:none;font-weight:500;margin-top:2rem}
+.cta:hover{background:var(--rose);color:var(--black)}
+.contact-info{margin-top:4rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;font-size:.82rem;letter-spacing:.12rem;color:rgba(232,232,232,.55)}
+.contact-info strong{color:var(--rose)}
+footer{text-align:center;padding:3rem;background:var(--black);border-top:1px solid rgba(196,131,108,.08)}
+.footer-logo{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);letter-spacing:.4rem;margin-bottom:1rem}
+.footer-text{font-size:.72rem;color:rgba(232,232,232,.35);letter-spacing:.18rem;text-transform:uppercase}
+.editable{outline:2px dashed transparent;outline-offset:6px;cursor:text;transition:outline .3s;border-radius:4px;padding:0 4px}
+.editable:hover{outline-color:rgba(196,131,108,.3)}
+.editable:focus{outline-color:rgba(196,131,108,.6);background:rgba(255,255,255,.03)}
+@media(max-width:768px){.hero h1{font-size:3.5rem}.section-title{font-size:2.2rem}#contacto h2{font-size:2.5rem}.cards{grid-template-columns:1fr}.contact-info{gap:1.5rem}}
 </style>
 </head>
 <body>
@@ -148,7 +150,6 @@
   </div>
 </section>
 
-<!-- CATEGORÍAS -->
 <section id="categorias">
   <div class="section-header">
     <div class="section-label">Catálogo</div>
@@ -156,119 +157,163 @@
     <div class="section-divider"></div>
   </div>
 
-  <!-- FILA 1 -->
   <div class="cats-row">
     <!-- 15 AÑOS -->
     <div class="cat-block">
       <div class="cat-label editable" contenteditable="true">15 Años</div>
-      <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="img/15-anios/cover.png" alt="15 Años">
+      <input type="checkbox" class="gal-toggle" id="gal-15-anios">
+      <label class="cover-label" for="gal-15-anios">
+        <img src="photos/15-anios/cover.png" alt="15 Años">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="img/15-anios/img1.png" alt=""></div>
-        <div class="gal-item"><img src="img/15-anios/img2.png" alt=""></div>
-        <div class="gal-item"><img src="img/15-anios/img3.png" alt=""></div>
-        <div class="gal-item"><img src="img/15-anios/img4.png" alt=""></div>
-        <div class="gal-item"><img src="img/15-anios/img5.png" alt=""></div>
-        <div class="gal-item"><img src="img/15-anios/img6.png" alt=""></div>
-        <div class="gal-item"><img src="img/15-anios/img7.png" alt=""></div>
-        <div class="gal-item"><img src="img/15-anios/img8.png" alt=""></div>
-        <div class="gal-item"><img src="img/15-anios/img9.png" alt=""></div>
-        <div class="gal-item"><img src="img/15-anios/img10.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img1.jpeg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img10.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img11.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img12.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img13.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img14.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img15.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img16.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img17.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img18.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img19.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img2.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img20.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img21.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img22.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img23.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img24.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img25.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img26.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img3.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img4.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img5.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img6.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img7.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img8.png" alt=""></div>
+        <div class="gal-item"><img src="photos/15-anios/img9.png" alt=""></div>
       </div>
     </div>
-    <!-- NOVIAS -->
-    <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Novias</div>
-      <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="img/novias/cover.png" alt="Novias">
-        <div class="cover-hint">Ver galería</div>
-      </label>
-      <div class="gal-grid">
-        <div class="gal-item"><img src="img/novias/img1.png" alt=""></div>
-        <div class="gal-item"><img src="img/novias/img2.png" alt=""></div>
-        <div class="gal-item"><img src="img/novias/img3.png" alt=""></div>
-        <div class="gal-item"><img src="img/novias/img4.png" alt=""></div>
-        <div class="gal-item"><img src="img/novias/img5.png" alt=""></div>
-        <div class="gal-item"><img src="img/novias/img6.png" alt=""></div>
-        <div class="gal-item"><img src="img/novias/img7.png" alt=""></div>
-        <div class="gal-item"><img src="img/novias/img8.jpg" alt=""></div>
-      </div>
-    </div>
-    <!-- PEINADOS -->
-    <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Peinados</div>
-      <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="img/peinados/cover.jpeg" alt="Peinados">
-        <div class="cover-hint">Ver galería</div>
-      </label>
-      <div class="gal-grid">
-        <div class="gal-item"><img src="img/peinados/img1.jpeg" alt=""></div>
-        <div class="gal-item"><img src="img/peinados/img2.jpeg" alt=""></div>
-        <div class="gal-item"><img src="img/peinados/img3.jpeg" alt=""></div>
-        <div class="gal-item"><img src="img/peinados/img4.jpeg" alt=""></div>
-        <div class="gal-item"><img src="img/peinados/img5.jpeg" alt=""></div>
-        <div class="gal-item"><img src="img/peinados/img6.jpeg" alt=""></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- FILA 2 -->
-<section id="categorias-2">
-  <div class="cats-row">
     <!-- ARTÍSTICO -->
     <div class="cat-block">
       <div class="cat-label editable" contenteditable="true">Artístico</div>
-      <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="img/artistico/cover.png" alt="Artístico">
+      <input type="checkbox" class="gal-toggle" id="gal-artistico">
+      <label class="cover-label" for="gal-artistico">
+        <img src="photos/artistico/cover.jpg" alt="Artístico">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="img/artistico/img1.png" alt=""></div>
-        <div class="gal-item"><img src="img/artistico/img2.png" alt=""></div>
-        <div class="gal-item"><img src="img/artistico/img3.png" alt=""></div>
-        <div class="gal-item"><img src="img/artistico/img4.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img1.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img10.png" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img11.png" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img12.png" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img13.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img2.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img3.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img4.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img5.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img6.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img7.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img8.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/artistico/img9.png" alt=""></div>
       </div>
     </div>
+
     <!-- HALLOWEEN -->
     <div class="cat-block">
       <div class="cat-label editable" contenteditable="true">Halloween</div>
-      <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="img/hallowen/cover.png" alt="Halloween">
+      <input type="checkbox" class="gal-toggle" id="gal-hallowen">
+      <label class="cover-label" for="gal-hallowen">
+        <img src="photos/hallowen/cover.jpg" alt="Halloween">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="img/hallowen/img1.png" alt=""></div>
-        <div class="gal-item"><img src="img/hallowen/img2.jpg" alt=""></div>
-        <div class="gal-item"><img src="img/hallowen/img3.jpg" alt=""></div>
-        <div class="gal-item"><img src="img/hallowen/img4.jpg" alt=""></div>
-        <div class="gal-item"><img src="img/hallowen/img5.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/hallowen/img1.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/hallowen/img2.png" alt=""></div>
+        <div class="gal-item"><img src="photos/hallowen/img3.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/hallowen/img4.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/hallowen/img5.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/hallowen/img6.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/hallowen/img7.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/hallowen/img8.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/hallowen/img9.png" alt=""></div>
       </div>
     </div>
+
     <!-- NOCHE GLAM -->
     <div class="cat-block">
       <div class="cat-label editable" contenteditable="true">Noche Glam</div>
-      <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="img/noche-glam/cover.png" alt="Noche Glam">
+      <input type="checkbox" class="gal-toggle" id="gal-noche-glam">
+      <label class="cover-label" for="gal-noche-glam">
+        <img src="photos/noche-glam/cover.jpg" alt="Noche Glam">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="img/noche-glam/img1.jpg" alt=""></div>
-        <div class="gal-item"><img src="img/noche-glam/img2.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/noche-glam/img1.png" alt=""></div>
+        <div class="gal-item"><img src="photos/noche-glam/img2.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/noche-glam/img3.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/noche-glam/img4.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/noche-glam/img5.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/noche-glam/img6.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/noche-glam/img7.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/noche-glam/img8.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/noche-glam/img9.jpg" alt=""></div>
       </div>
     </div>
+
+    <!-- NOVIAS -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Novias</div>
+      <input type="checkbox" class="gal-toggle" id="gal-novias">
+      <label class="cover-label" for="gal-novias">
+        <img src="photos/novias/cover.png" alt="Novias">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="photos/novias/img1.png" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img10.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img11.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img12.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img13.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img14.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img15.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img16.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img17.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img18.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img2.png" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img3.png" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img4.png" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img5.png" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img6.png" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img7.png" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img8.jpg" alt=""></div>
+        <div class="gal-item"><img src="photos/novias/img9.jpg" alt=""></div>
+      </div>
+    </div>
+
+    <!-- PEINADOS -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Peinados</div>
+      <input type="checkbox" class="gal-toggle" id="gal-peinados">
+      <label class="cover-label" for="gal-peinados">
+        <img src="photos/peinados/cover.jpeg" alt="Peinados">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="photos/peinados/img1.jpeg" alt=""></div>
+        <div class="gal-item"><img src="photos/peinados/img2.jpeg" alt=""></div>
+        <div class="gal-item"><img src="photos/peinados/img3.jpeg" alt=""></div>
+        <div class="gal-item"><img src="photos/peinados/img4.jpeg" alt=""></div>
+        <div class="gal-item"><img src="photos/peinados/img5.jpeg" alt=""></div>
+        <div class="gal-item"><img src="photos/peinados/img6.jpeg" alt=""></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- SERVICIOS -->
 <section id="servicios">
   <div class="section-header">
     <div class="section-label">Servicios</div>
@@ -342,7 +387,7 @@
 <section id="contacto">
   <h2 class="editable" contenteditable="true">Reserva tu <em>cita</em></h2>
   <div class="section-divider"></div>
-  <p style="max-width:520px;margin:0 auto 2.5rem;font-weight:300;line-height:1.9;color:rgba(232,232,232,.65)">Escribinos para coordinar fecha, servicio y asesoramiento personalizado. Cada servicio incluye productos de alta gama y atención profesional.</p>
+  <p style="max-width:520px;margin:0 auto 2.5rem;font-weight:300;line-height:1.9;color:rgba(232,232,232,.65)">Escribinos para coordinar fecha, servicio y asesoramiento personalizado.</p>
   <a href="#" class="cta">Agendar Ahora</a>
   <div class="contact-info">
     <span>📍 <strong>Bogotá, Colombia</strong></span>
