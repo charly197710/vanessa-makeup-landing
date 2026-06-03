@@ -44,7 +44,7 @@
   .stats h4{font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400}
   .stats p{font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem}
   .cats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-  @media(max-width:900px){.cats-row{grid-template-columns:1fr 1fr}}
+  @media(max-width:900px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:3rem}}
   @media(max-width:600px){.cats-row{grid-template-columns:1fr}}
   .cat-block{border:1px solid rgba(196,131,108,.15);border-radius:16px;background:#0a0a0a;overflow:hidden}
   .cat-label{font-family:Georgia,serif;font-size:1.6rem;color:var(--rose);text-align:center;padding:1.2rem;letter-spacing:.1rem;font-weight:400}
@@ -54,18 +54,18 @@
   .cover-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(13,13,13,.7);color:var(--gold);padding:.4rem 1rem;border-radius:999px;font-size:.75rem;letter-spacing:.15rem;text-transform:uppercase;backdrop-filter:blur(6px);border:1px solid rgba(212,165,116,.3);transition:opacity .3s;pointer-events:none}
   .cover-wrap:hover .cover-hint{opacity:0}
   .gal-input{display:none}
-  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:1rem;max-height:0;overflow:hidden;transition:max-height .6s ease,opacity .4s;opacity:0}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:1rem;max-height:0;overflow:hidden;transition:max-height .6s ease,opacity .4s;opacity:0}
   @media(max-width:1000px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:700px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:450px){.gal-grid{grid-template-columns:1fr}}
-  .gal-input:checked+.gal-grid{max-height:3000px;opacity:1}
-  .gal-item{position:relative;border-radius:12px;overflow:hidden;background:#050505;aspect-ratio:1/1;border:1px solid rgba(196,131,108,.1)}
+  .gal-input:checked+.gal-grid{max-height:4000px;opacity:1}
+  .gal-item{position:relative;border-radius:10px;overflow:hidden;background:#050505;aspect-ratio:1/1;border:1px solid rgba(196,131,108,.1)}
   .gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-  .gal-item:hover img{transform:scale(1.06)}
+  .gal-item:hover img{transform:scale(1.05)}
   #servicios{background:linear-gradient(180deg,transparent,rgba(196,131,108,.02),transparent)}
   .service-group{margin-bottom:4rem}
   .service-group-title{font-family:Georgia,serif;font-size:1.8rem;color:var(--rose-pale);text-align:center;margin-bottom:2rem;letter-spacing:.15rem;font-weight:400}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
   .card{background:rgba(255,255,255,.02);backdrop-filter:blur(10px);border:1px solid rgba(196,131,108,.15);border-radius:20px;padding:2.2rem 1.8rem;transition:all .5s;position:relative;overflow:hidden;text-align:left}
   .card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(196,131,108,.08),transparent);transition:.8s}
   .card:hover::before{left:100%}
@@ -73,7 +73,7 @@
   .card h3{font-family:Georgia,serif;font-size:1.3rem;color:var(--rose);letter-spacing:.1rem;margin-bottom:.8rem;font-weight:400}
   .card ul{list-style:none;margin-bottom:1.2rem}
   .card ul li{font-weight:300;font-size:.82rem;color:rgba(232,232,232,.6);line-height:1.7;padding-left:1rem;position:relative}
-  .card ul li::before{content:'\u2014';position:absolute;left:0;color:var(--rose);opacity:.6}
+  .card ul li::before{content:'—';position:absolute;left:0;color:var(--rose);opacity:.6}
   .card .price{font-family:Georgia,serif;font-size:1.8rem;color:var(--silver);letter-spacing:.1rem;text-align:right}
   .card .price small{font-size:.75rem;color:rgba(232,232,232,.4);display:block;margin-top:.3rem}
   .glitter-card{border:1px solid rgba(212,165,116,.3);background:linear-gradient(135deg,rgba(196,131,108,.05),rgba(212,165,116,.03))}
@@ -92,7 +92,7 @@
   .editable{outline:2px dashed transparent;outline-offset:6px;cursor:text;transition:outline .3s;border-radius:4px;padding:0 4px}
   .editable:hover{outline-color:rgba(196,131,108,.3)}
   .editable:focus{outline-color:rgba(196,131,108,.6);background:rgba(255,255,255,.03)}
-  @media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:3rem}.hero h1{font-size:4rem}.section-title{font-size:2.4rem}#contacto h2{font-size:2.8rem}}
+  @media(max-width:768px){.hero h1{font-size:4rem}.section-title{font-size:2.4rem}#contacto h2{font-size:2.8rem}.cards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -152,119 +152,112 @@
     <h2 class="section-title">Categorías <em>de estilo</em></h2>
     <div class="section-divider"></div>
   </div>
+
+  <!-- FILA 1: 15 años, Novias, Peinados -->
   <div class="cats-row">
     <div class="cat-block">
       <div class="cat-label editable" contenteditable="true">15 Años</div>
       <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="maquillaje-vanessa/15 a%C3%B1os.jpg" alt="15 Años">
+        <input type="checkbox" class="gal-input" id="g-15a">
+        <img src="img/15-anios/cover.jpg" alt="15 Años">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os1.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os2.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os3.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os4.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os5.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os6.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os7.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os8.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os9.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os10.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os11.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os12.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os13.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os14.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/15 a%C3%B1os15.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img1.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img2.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img3.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img4.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img5.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img6.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img7.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img8.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img9.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img10.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/15-anios/img11.jpg" alt=""></div>
       </div>
     </div>
     <div class="cat-block">
       <div class="cat-label editable" contenteditable="true">Novias</div>
       <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="maquillaje-vanessa/novias.jpg" alt="Novias">
+        <input type="checkbox" class="gal-input" id="g-nov">
+        <img src="img/novias/cover.jpg" alt="Novias">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="maquillaje-vanessa/novias1.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/novias2.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/novias3.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/novias4.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/novias5.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/novias6.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/novias7.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/novias8.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/novias9.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/novias10.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/novias/img1.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/novias/img2.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/novias/img3.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/novias/img4.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/novias/img5.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/novias/img6.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/novias/img7.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/novias/img8.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/novias/img9.jpg" alt=""></div>
       </div>
     </div>
     <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Noche Glam</div>
+      <div class="cat-label editable" contenteditable="true">Peinados</div>
       <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="maquillaje-vanessa/noche%20glam.jpg" alt="Noche Glam">
+        <input type="checkbox" class="gal-input" id="g-pei">
+        <img src="img/peinados/cover.jpg" alt="Peinados">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="maquillaje-vanessa/noche%20glam1.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/noche%20glam2.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/noche%20glam3.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/noche%20glam4.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/noche%20glam5.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/noche%20glam6.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/noche%20glam7.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/noche%20galm%208.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/peinados/img1.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/peinados/img2.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/peinados/img3.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/peinados/img4.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/peinados/img5.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/peinados/img6.jpg" alt=""></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FILA 2: Artístico, Halloween, Noche Glam -->
 <section id="categorias-2">
   <div class="cats-row">
     <div class="cat-block">
       <div class="cat-label editable" contenteditable="true">Artístico</div>
       <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="maquillaje-vanessa/artistico.jpg" alt="Artístico">
+        <input type="checkbox" class="gal-input" id="g-art">
+        <img src="img/artistico/cover.jpg" alt="Artístico">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="maquillaje-vanessa/artistico1.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/artistico2.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/artistico3.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/artistico/img1.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/artistico/img2.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/artistico/img3.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/artistico/img4.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/artistico/img5.jpg" alt=""></div>
       </div>
     </div>
     <div class="cat-block">
       <div class="cat-label editable" contenteditable="true">Halloween</div>
       <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="maquillaje-vanessa/hallowen.jpg" alt="Halloween">
+        <input type="checkbox" class="gal-input" id="g-hal">
+        <img src="img/hallowen/cover.jpg" alt="Halloween">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="maquillaje-vanessa/hallowen1.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/hallowen2.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/hallowen3.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/hallowen4.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/hallowen5.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/hallowen6.webp" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/hallowen7.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/hallowen8.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/hallowen/img1.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/hallowen/img2.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/hallowen/img3.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/hallowen/img4.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/hallowen/img5.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/hallowen/img6.jpg" alt=""></div>
       </div>
     </div>
     <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Grupos de Danza</div>
+      <div class="cat-label editable" contenteditable="true">Noche Glam</div>
       <label class="cover-wrap">
-        <input type="checkbox" class="gal-input">
-        <img src="maquillaje-vanessa/danzas.jpg" alt="Danzas">
+        <input type="checkbox" class="gal-input" id="g-noc">
+        <img src="img/noche-glam/cover.jpg" alt="Noche Glam">
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="maquillaje-vanessa/danzas1.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/danzas2.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/danzas3.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/danzas4.jpg" alt=""></div>
-        <div class="gal-item"><img src="maquillaje-vanessa/danzas5.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/noche-glam/img1.jpg" alt=""></div>
+        <div class="gal-item"><img src="img/noche-glam/img2.jpg" alt=""></div>
       </div>
     </div>
   </div>
@@ -276,6 +269,7 @@
     <h2 class="section-title editable" contenteditable="true">Nuestros <em>servicios</em></h2>
     <div class="section-divider"></div>
   </div>
+
   <div class="service-group">
     <div class="service-group-title editable" contenteditable="true">Tratamientos Faciales</div>
     <div class="cards">
@@ -284,6 +278,7 @@
       <div class="card"><h3 class="editable" contenteditable="true">Hidratación Profunda</h3><ul><li class="editable" contenteditable="true">Sero hidratante premium</li><li class="editable" contenteditable="true">Mascarilla nutritiva</li><li class="editable" contenteditable="true">Masaje facial relajante</li></ul><div class="price editable" contenteditable="true">$90.000</div></div>
     </div>
   </div>
+
   <div class="service-group">
     <div class="service-group-title editable" contenteditable="true">Maquillaje</div>
     <div class="cards">
@@ -291,6 +286,7 @@
       <div class="card"><h3 class="editable" contenteditable="true">Full Glam</h3><ul><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Pestañas incluidas</li><li class="editable" contenteditable="true">Glitter corporal</li><li class="editable" contenteditable="true">Retoque labial</li></ul><div class="price editable" contenteditable="true">$110.000</div></div>
     </div>
   </div>
+
   <div class="service-group">
     <div class="service-group-title editable" contenteditable="true">Quinceañeras y Novias</div>
     <div class="cards">
@@ -303,6 +299,7 @@
       <div class="card"><h3 class="editable" contenteditable="true">Paquete Hidratación + Pestañas</h3><ul><li class="editable" contenteditable="true">Hidratación facial previa al evento</li><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Prueba de maquillaje</li><li class="editable" contenteditable="true">Maquillaje día del evento</li><li class="editable" contenteditable="true">Kit de retoque</li><li class="editable" contenteditable="true">Pestañas</li></ul><div class="price editable" contenteditable="true">$250.000</div></div>
     </div>
   </div>
+
   <div class="service-group">
     <div class="service-group-title editable" contenteditable="true">Glitter Bar — Día del Evento</div>
     <div class="cards">
