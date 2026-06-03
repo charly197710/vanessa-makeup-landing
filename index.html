@@ -49,23 +49,34 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative}
 .cat-block{border:1px solid rgba(196,131,108,.12);border-radius:16px;background:#0a0a0a;overflow:hidden;transition:border-color .3s}
 .cat-block:hover{border-color:rgba(196,131,108,.25)}
 .cat-label{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);text-align:center;padding:1.2rem;letter-spacing:.1rem;font-weight:400}
-/* CHECKBOX HACK: el input esta oculto, el label cubre la imagen */
 .gal-toggle{display:none}
 .cover-label{position:relative;cursor:pointer;display:block;overflow:hidden}
 .cover-label img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:all .5s}
 .cover-label:hover img{filter:brightness(1.08) saturate(1.1);transform:scale(1.02)}
-.cover-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(13,13,13,.75);color:var(--gold);padding:.4rem 1.2rem;border-radius:999px;font-size:.7rem;letter-spacing:.15rem;text-transform:uppercase;backdrop-filter:blur(8px);border:1px solid rgba(212,165,116,.3);transition:all .3s;pointer-events:none;white-space:nowrap}
+.cover-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(13,13,13,.75);color:var(--gold);padding:.4rem 1.2rem;border-radius:999px;font-size:.7rem;letter-spacing:.15rem;text-transform:uppercase;backdrop-filter:blur(8px);border:1px solid rgba(212,165,116,.3);transition:opacity .3s;pointer-events:none;white-space:nowrap}
 .cover-label:hover .cover-hint{opacity:0}
 .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:0 1rem 1rem;max-height:0;overflow:hidden;opacity:0;transition:max-height .6s ease,opacity .4s}
 @media(max-width:1000px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:450px){.gal-grid{grid-template-columns:1fr}}
-/* ESTO ES LA CLAVE: cuando el checkbox esta checked, muestra la galeria */
 .gal-toggle:checked ~ .gal-grid{max-height:5000px;opacity:1}
-.gal-item{position:relative;border-radius:10px;overflow:hidden;background:#050505;aspect-ratio:1/1;border:1px solid rgba(196,131,108,.08);transition:border-color .3s}
-.gal-item:hover{border-color:rgba(196,131,108,.25)}
+.gal-item{position:relative;border-radius:10px;overflow:hidden;background:#050505;aspect-ratio:1/1;border:1px solid rgba(196,131,108,.08);transition:all .3s;cursor:zoom-in}
+.gal-item:hover{border-color:rgba(196,131,108,.3);transform:scale(1.02)}
 .gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
 .gal-item:hover img{transform:scale(1.05)}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.95);align-items:center;justify-content:center;flex-direction:column}
+.lightbox.active{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 0 60px rgba(0,0,0,.5)}
+.lightbox-close{position:absolute;top:2rem;right:2rem;color:var(--silver);font-size:2rem;cursor:pointer;background:none;border:none;transition:color .3s;z-index:10001}
+.lightbox-close:hover{color:var(--rose)}
+.lightbox-counter{color:var(--rose-pale);font-size:.85rem;letter-spacing:.2rem;margin-top:1rem;font-family:Georgia,serif}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(13,13,13,.6);color:var(--silver);border:1px solid rgba(196,131,108,.2);width:50px;height:50px;border-radius:50%;font-size:1.2rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center}
+.lightbox-nav:hover{background:var(--rose);color:var(--black)}
+.lightbox-prev{left:2rem}
+.lightbox-next{right:2rem}
+
 #servicios{background:linear-gradient(180deg,transparent,rgba(196,131,108,.02),transparent)}
 .service-group{margin-bottom:4rem}
 .service-group-title{font-family:Georgia,serif;font-size:1.8rem;color:var(--rose-pale);text-align:center;margin-bottom:2rem;letter-spacing:.15rem;font-weight:400}
@@ -96,7 +107,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
 .editable{outline:2px dashed transparent;outline-offset:6px;cursor:text;transition:outline .3s;border-radius:4px;padding:0 4px}
 .editable:hover{outline-color:rgba(196,131,108,.3)}
 .editable:focus{outline-color:rgba(196,131,108,.6);background:rgba(255,255,255,.03)}
-@media(max-width:768px){.hero h1{font-size:3.5rem}.section-title{font-size:2.2rem}#contacto h2{font-size:2.5rem}.cards{grid-template-columns:1fr}.contact-info{gap:1.5rem}}
+@media(max-width:768px){.hero h1{font-size:3.5rem}.section-title{font-size:2.2rem}#contacto h2{font-size:2.5rem}.cards{grid-template-columns:1rem}.lightbox-nav{width:40px;height:40px;font-size:1rem}.lightbox-prev{left:.5rem}.lightbox-next{right:.5rem}}
 </style>
 </head>
 <body>
@@ -167,99 +178,32 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="photos/15-anios/img1.jpeg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img10.png" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img11.png" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img12.png" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img13.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img14.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img15.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img16.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img17.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img18.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img19.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img2.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img20.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img21.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img22.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img23.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img24.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img25.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img26.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img3.png" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img4.png" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img5.png" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img6.png" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img7.png" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img8.png" alt=""></div>
-        <div class="gal-item"><img src="photos/15-anios/img9.png" alt=""></div>
-      </div>
-    </div>
-
-    <!-- ARTÍSTICO -->
-    <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Artístico</div>
-      <input type="checkbox" class="gal-toggle" id="gal-artistico">
-      <label class="cover-label" for="gal-artistico">
-        <img src="photos/artistico/cover.jpg" alt="Artístico">
-        <div class="cover-hint">Ver galería</div>
-      </label>
-      <div class="gal-grid">
-        <div class="gal-item"><img src="photos/artistico/img1.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img10.png" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img11.png" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img12.png" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img13.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img2.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img3.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img4.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img5.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img6.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img7.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img8.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/artistico/img9.png" alt=""></div>
-      </div>
-    </div>
-
-    <!-- HALLOWEEN -->
-    <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Halloween</div>
-      <input type="checkbox" class="gal-toggle" id="gal-hallowen">
-      <label class="cover-label" for="gal-hallowen">
-        <img src="photos/hallowen/cover.jpg" alt="Halloween">
-        <div class="cover-hint">Ver galería</div>
-      </label>
-      <div class="gal-grid">
-        <div class="gal-item"><img src="photos/hallowen/img1.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/hallowen/img2.png" alt=""></div>
-        <div class="gal-item"><img src="photos/hallowen/img3.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/hallowen/img4.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/hallowen/img5.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/hallowen/img6.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/hallowen/img7.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/hallowen/img8.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/hallowen/img9.png" alt=""></div>
-      </div>
-    </div>
-
-    <!-- NOCHE GLAM -->
-    <div class="cat-block">
-      <div class="cat-label editable" contenteditable="true">Noche Glam</div>
-      <input type="checkbox" class="gal-toggle" id="gal-noche-glam">
-      <label class="cover-label" for="gal-noche-glam">
-        <img src="photos/noche-glam/cover.jpg" alt="Noche Glam">
-        <div class="cover-hint">Ver galería</div>
-      </label>
-      <div class="gal-grid">
-        <div class="gal-item"><img src="photos/noche-glam/img1.png" alt=""></div>
-        <div class="gal-item"><img src="photos/noche-glam/img2.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/noche-glam/img3.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/noche-glam/img4.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/noche-glam/img5.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/noche-glam/img6.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/noche-glam/img7.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/noche-glam/img8.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/noche-glam/img9.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img1.jpeg"><img src="photos/15-anios/img1.jpeg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img10.png"><img src="photos/15-anios/img10.png" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img11.png"><img src="photos/15-anios/img11.png" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img12.png"><img src="photos/15-anios/img12.png" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img13.jpg"><img src="photos/15-anios/img13.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img14.jpg"><img src="photos/15-anios/img14.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img15.jpg"><img src="photos/15-anios/img15.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img16.jpg"><img src="photos/15-anios/img16.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img17.jpg"><img src="photos/15-anios/img17.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img18.jpg"><img src="photos/15-anios/img18.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img19.jpg"><img src="photos/15-anios/img19.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img2.jpg"><img src="photos/15-anios/img2.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img20.jpg"><img src="photos/15-anios/img20.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img21.jpg"><img src="photos/15-anios/img21.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img22.jpg"><img src="photos/15-anios/img22.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img23.jpg"><img src="photos/15-anios/img23.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img24.jpg"><img src="photos/15-anios/img24.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img25.jpg"><img src="photos/15-anios/img25.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img26.jpg"><img src="photos/15-anios/img26.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img3.png"><img src="photos/15-anios/img3.png" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img4.png"><img src="photos/15-anios/img4.png" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img5.png"><img src="photos/15-anios/img5.png" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img6.png"><img src="photos/15-anios/img6.png" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img7.png"><img src="photos/15-anios/img7.png" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img8.png"><img src="photos/15-anios/img8.png" alt=""></div>
+        <div class="gal-item" data-img="photos/15-anios/img9.png"><img src="photos/15-anios/img9.png" alt=""></div>
       </div>
     </div>
 
@@ -272,24 +216,91 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="photos/novias/img1.png" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img10.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img11.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img12.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img13.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img14.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img15.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img16.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img17.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img18.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img2.png" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img3.png" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img4.png" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img5.png" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img6.png" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img7.png" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img8.jpg" alt=""></div>
-        <div class="gal-item"><img src="photos/novias/img9.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img1.png"><img src="photos/novias/img1.png" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img10.jpg"><img src="photos/novias/img10.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img11.jpg"><img src="photos/novias/img11.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img12.jpg"><img src="photos/novias/img12.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img13.jpg"><img src="photos/novias/img13.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img14.jpg"><img src="photos/novias/img14.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img15.jpg"><img src="photos/novias/img15.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img16.jpg"><img src="photos/novias/img16.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img17.jpg"><img src="photos/novias/img17.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img18.jpg"><img src="photos/novias/img18.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img2.png"><img src="photos/novias/img2.png" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img3.png"><img src="photos/novias/img3.png" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img4.png"><img src="photos/novias/img4.png" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img5.png"><img src="photos/novias/img5.png" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img6.png"><img src="photos/novias/img6.png" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img7.png"><img src="photos/novias/img7.png" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img8.jpg"><img src="photos/novias/img8.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/novias/img9.jpg"><img src="photos/novias/img9.jpg" alt=""></div>
+      </div>
+    </div>
+
+    <!-- NOCHE GLAM -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Noche Glam</div>
+      <input type="checkbox" class="gal-toggle" id="gal-noche-glam">
+      <label class="cover-label" for="gal-noche-glam">
+        <img src="photos/noche-glam/cover.png" alt="Noche Glam">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item" data-img="photos/noche-glam/img1.png"><img src="photos/noche-glam/img1.png" alt=""></div>
+        <div class="gal-item" data-img="photos/noche-glam/img2.jpg"><img src="photos/noche-glam/img2.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/noche-glam/img3.jpg"><img src="photos/noche-glam/img3.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/noche-glam/img4.jpg"><img src="photos/noche-glam/img4.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/noche-glam/img5.jpg"><img src="photos/noche-glam/img5.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/noche-glam/img6.jpg"><img src="photos/noche-glam/img6.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/noche-glam/img7.jpg"><img src="photos/noche-glam/img7.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/noche-glam/img8.jpg"><img src="photos/noche-glam/img8.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/noche-glam/img9.jpg"><img src="photos/noche-glam/img9.jpg" alt=""></div>
+      </div>
+    </div>
+
+    <!-- ARTÍSTICO -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Artístico</div>
+      <input type="checkbox" class="gal-toggle" id="gal-artistico">
+      <label class="cover-label" for="gal-artistico">
+        <img src="photos/artistico/cover.jpg" alt="Artístico">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item" data-img="photos/artistico/img1.jpg"><img src="photos/artistico/img1.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img10.png"><img src="photos/artistico/img10.png" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img11.png"><img src="photos/artistico/img11.png" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img12.png"><img src="photos/artistico/img12.png" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img13.jpg"><img src="photos/artistico/img13.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img2.jpg"><img src="photos/artistico/img2.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img3.jpg"><img src="photos/artistico/img3.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img4.jpg"><img src="photos/artistico/img4.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img5.jpg"><img src="photos/artistico/img5.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img6.jpg"><img src="photos/artistico/img6.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img7.jpg"><img src="photos/artistico/img7.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img8.jpg"><img src="photos/artistico/img8.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/artistico/img9.png"><img src="photos/artistico/img9.png" alt=""></div>
+      </div>
+    </div>
+
+    <!-- HALLOWEEN -->
+    <div class="cat-block">
+      <div class="cat-label editable" contenteditable="true">Halloween</div>
+      <input type="checkbox" class="gal-toggle" id="gal-hallowen">
+      <label class="cover-label" for="gal-hallowen">
+        <img src="photos/hallowen/cover.jpg" alt="Halloween">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item" data-img="photos/hallowen/img1.jpg"><img src="photos/hallowen/img1.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/hallowen/img2.png"><img src="photos/hallowen/img2.png" alt=""></div>
+        <div class="gal-item" data-img="photos/hallowen/img3.jpg"><img src="photos/hallowen/img3.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/hallowen/img4.jpg"><img src="photos/hallowen/img4.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/hallowen/img5.jpg"><img src="photos/hallowen/img5.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/hallowen/img6.jpg"><img src="photos/hallowen/img6.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/hallowen/img7.jpg"><img src="photos/hallowen/img7.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/hallowen/img8.jpg"><img src="photos/hallowen/img8.jpg" alt=""></div>
+        <div class="gal-item" data-img="photos/hallowen/img9.png"><img src="photos/hallowen/img9.png" alt=""></div>
       </div>
     </div>
 
@@ -302,12 +313,12 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
         <div class="cover-hint">Ver galería</div>
       </label>
       <div class="gal-grid">
-        <div class="gal-item"><img src="photos/peinados/img1.jpeg" alt=""></div>
-        <div class="gal-item"><img src="photos/peinados/img2.jpeg" alt=""></div>
-        <div class="gal-item"><img src="photos/peinados/img3.jpeg" alt=""></div>
-        <div class="gal-item"><img src="photos/peinados/img4.jpeg" alt=""></div>
-        <div class="gal-item"><img src="photos/peinados/img5.jpeg" alt=""></div>
-        <div class="gal-item"><img src="photos/peinados/img6.jpeg" alt=""></div>
+        <div class="gal-item" data-img="photos/peinados/img1.jpeg"><img src="photos/peinados/img1.jpeg" alt=""></div>
+        <div class="gal-item" data-img="photos/peinados/img2.jpeg"><img src="photos/peinados/img2.jpeg" alt=""></div>
+        <div class="gal-item" data-img="photos/peinados/img3.jpeg"><img src="photos/peinados/img3.jpeg" alt=""></div>
+        <div class="gal-item" data-img="photos/peinados/img4.jpeg"><img src="photos/peinados/img4.jpeg" alt=""></div>
+        <div class="gal-item" data-img="photos/peinados/img5.jpeg"><img src="photos/peinados/img5.jpeg" alt=""></div>
+        <div class="gal-item" data-img="photos/peinados/img6.jpeg"><img src="photos/peinados/img6.jpeg" alt=""></div>
       </div>
     </div>
 
@@ -320,7 +331,6 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
     <h2 class="section-title editable" contenteditable="true">Nuestros <em>servicios</em></h2>
     <div class="section-divider"></div>
   </div>
-
   <div class="service-group">
     <div class="service-group-title editable" contenteditable="true">Tratamientos Faciales</div>
     <div class="cards">
@@ -329,7 +339,6 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
       <div class="card"><h3 class="editable" contenteditable="true">Hidratación Profunda</h3><ul><li class="editable" contenteditable="true">Sero hidratante premium</li><li class="editable" contenteditable="true">Mascarilla nutritiva</li><li class="editable" contenteditable="true">Masaje facial relajante</li></ul><div class="price editable" contenteditable="true">$90.000</div></div>
     </div>
   </div>
-
   <div class="service-group">
     <div class="service-group-title editable" contenteditable="true">Maquillaje</div>
     <div class="cards">
@@ -337,7 +346,6 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
       <div class="card"><h3 class="editable" contenteditable="true">Full Glam</h3><ul><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Pestañas incluidas</li><li class="editable" contenteditable="true">Glitter corporal</li><li class="editable" contenteditable="true">Retoque labial</li></ul><div class="price editable" contenteditable="true">$110.000</div></div>
     </div>
   </div>
-
   <div class="service-group">
     <div class="service-group-title editable" contenteditable="true">Quinceañeras y Novias</div>
     <div class="cards">
@@ -350,34 +358,19 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
       <div class="card"><h3 class="editable" contenteditable="true">Paquete Hidratación + Pestañas</h3><ul><li class="editable" contenteditable="true">Hidratación facial previa al evento</li><li class="editable" contenteditable="true">Preparación de piel</li><li class="editable" contenteditable="true">Prueba de maquillaje</li><li class="editable" contenteditable="true">Maquillaje día del evento</li><li class="editable" contenteditable="true">Kit de retoque</li><li class="editable" contenteditable="true">Pestañas</li></ul><div class="price editable" contenteditable="true">$250.000</div></div>
     </div>
   </div>
-
   <div class="service-group">
     <div class="service-group-title editable" contenteditable="true">Glitter Bar — Día del Evento</div>
     <div class="cards">
       <div class="card glitter-card">
         <div class="glitter-badge">✨ Servicio Especial</div>
         <h3 class="editable" contenteditable="true">Glitter Bar — 1h 30min</h3>
-        <ul>
-          <li class="editable" contenteditable="true">Maquillaje con glitter de colores</li>
-          <li class="editable" contenteditable="true">Maquillaje neón</li>
-          <li class="editable" contenteditable="true">Gemas faciales</li>
-          <li class="editable" contenteditable="true">Tatuajes temporales</li>
-          <li class="editable" contenteditable="true">Strass (pedrería facial)</li>
-          <li class="editable" contenteditable="true">Dos maquilladoras</li>
-        </ul>
+        <ul><li class="editable" contenteditable="true">Maquillaje con glitter de colores</li><li class="editable" contenteditable="true">Maquillaje neón</li><li class="editable" contenteditable="true">Gemas faciales</li><li class="editable" contenteditable="true">Tatuajes temporales</li><li class="editable" contenteditable="true">Strass (pedrería facial)</li><li class="editable" contenteditable="true">Dos maquilladoras</li></ul>
         <div class="price editable" contenteditable="true">$270.000 <small>1 hora 30 minutos</small></div>
       </div>
       <div class="card glitter-card">
         <div class="glitter-badge">✨ Servicio Especial</div>
         <h3 class="editable" contenteditable="true">Glitter Bar — 2 horas</h3>
-        <ul>
-          <li class="editable" contenteditable="true">Maquillaje con glitter de colores</li>
-          <li class="editable" contenteditable="true">Maquillaje neón</li>
-          <li class="editable" contenteditable="true">Gemas faciales</li>
-          <li class="editable" contenteditable="true">Tatuajes temporales</li>
-          <li class="editable" contenteditable="true">Strass (pedrería facial)</li>
-          <li class="editable" contenteditable="true">Dos maquilladoras</li>
-        </ul>
+        <ul><li class="editable" contenteditable="true">Maquillaje con glitter de colores</li><li class="editable" contenteditable="true">Maquillaje neón</li><li class="editable" contenteditable="true">Gemas faciales</li><li class="editable" contenteditable="true">Tatuajes temporales</li><li class="editable" contenteditable="true">Strass (pedrería facial)</li><li class="editable" contenteditable="true">Dos maquilladoras</li></ul>
         <div class="price editable" contenteditable="true">$320.000 <small>2 horas</small></div>
       </div>
     </div>
@@ -402,9 +395,74 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
   <p class="footer-text">© 2026 — Maquillaje Profesional</p>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev">&#8249;</button>
+  <img src="" alt="" id="lightbox-img">
+  <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
 <script>
+// Particles
 var pc=document.getElementById('particles');
 if(pc){for(var i=0;i<30;i++){var p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(Math.random()*10+10)+'s';p.style.animationDelay=(Math.random()*10)+'s';var s=(Math.random()*3+1)+'px';p.style.width=s;p.style.height=s;pc.appendChild(p)}}
+
+// Lightbox
+var lightbox=document.getElementById('lightbox');
+var lightboxImg=document.getElementById('lightbox-img');
+var lightboxCounter=document.getElementById('lightbox-counter');
+var currentImages=[];
+var currentIndex=0;
+
+function openLightbox(imgSrc,images,index){
+  currentImages=images;
+  currentIndex=index;
+  lightboxImg.src=imgSrc;
+  lightboxCounter.textContent=(index+1)+' / '+images.length;
+  lightbox.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  lightbox.classList.remove('active');
+  document.body.style.overflow='';
+}
+function showPrev(){
+  if(currentImages.length===0)return;
+  currentIndex=(currentIndex-1+currentImages.length)%currentImages.length;
+  lightboxImg.src=currentImages[currentIndex];
+  lightboxCounter.textContent=(currentIndex+1)+' / '+currentImages.length;
+}
+function showNext(){
+  if(currentImages.length===0)return;
+  currentIndex=(currentIndex+1)%currentImages.length;
+  lightboxImg.src=currentImages[currentIndex];
+  lightboxCounter.textContent=(currentIndex+1)+' / '+currentImages.length;
+}
+
+// Clic en imagenes de galeria
+document.querySelectorAll('.gal-item').forEach(function(item){
+  item.addEventListener('click',function(){
+    var img=this.getAttribute('data-img');
+    // Obtener todas las imagenes de la misma galeria
+    var grid=this.closest('.gal-grid');
+    var allImgs=Array.from(grid.querySelectorAll('.gal-item')).map(function(el){return el.getAttribute('data-img')});
+    var idx=allImgs.indexOf(img);
+    openLightbox(img,allImgs,idx);
+  });
+});
+
+document.getElementById('lightbox-close').addEventListener('click',closeLightbox);
+document.getElementById('lightbox-prev').addEventListener('click',showPrev);
+document.getElementById('lightbox-next').addEventListener('click',showNext);
+lightbox.addEventListener('click',function(e){if(e.target===lightbox)closeLightbox()});
+document.addEventListener('keydown',function(e){
+  if(!lightbox.classList.contains('active'))return;
+  if(e.key==='Escape')closeLightbox();
+  if(e.key==='ArrowLeft')showPrev();
+  if(e.key==='ArrowRight')showNext();
+});
 </script>
 </body>
 </html>
