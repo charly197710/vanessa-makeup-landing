@@ -39,9 +39,9 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
 .about-circle{position:relative;width:100%;max-width:500px;margin:0 auto;aspect-ratio:1}
 .about-circle .ring1{position:absolute;inset:0;border:2px solid rgba(196,131,108,.4);border-radius:50%;animation:rotateCW 20s linear infinite;box-shadow:0 0 15px rgba(196,131,108,.2),inset 0 0 15px rgba(196,131,108,.1)}
-.about-circle .ring2{position:absolute;inset:15px;border:2px solid rgba(212,165,116,.35);border-radius:50%;background:radial-gradient(circle,rgba(196,131,108,.06),transparent);display:flex;align-items:center;justify-content:center;overflow:hidden;animation:rotateCCW 15s linear infinite;box-shadow:0 0 12px rgba(212,165,116,.15),inset 0 0 12px rgba(212,165,116,.08)}
-.about-circle .ring3{position:absolute;inset:30px;border:1px dashed rgba(232,196,184,.3);border-radius:50%;animation:rotateCW 25s linear infinite}
-.about-logo{max-width:85%;max-height:85%;object-fit:contain;position:relative;z-index:2;filter:drop-shadow(0 0 10px rgba(196,131,108,.3))}
+.about-circle .ring2{position:absolute;inset:18px;border:2px solid rgba(212,165,116,.35);border-radius:50%;animation:rotateCCW 15s linear infinite;box-shadow:0 0 12px rgba(212,165,116,.15),inset 0 0 12px rgba(212,165,116,.08)}
+.about-circle .ring3{position:absolute;inset:35px;border:1px dashed rgba(232,196,184,.3);border-radius:50%;animation:rotateCW 25s linear infinite}
+.about-logo{position:absolute;inset:50px;border-radius:50%;object-fit:contain;z-index:2;filter:drop-shadow(0 0 10px rgba(196,131,108,.3))}
 @keyframes rotateCW{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes rotateCCW{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
@@ -142,10 +142,9 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
   <div class="about-grid">
     <div class="about-circle">
       <div class="ring1"></div>
-      <div class="ring2">
-        <div class="ring3"></div>
-        <img src="logo_circle.png" alt="VANESSA MAKE UP" class="about-logo">
-      </div>
+      <div class="ring2"></div>
+      <div class="ring3"></div>
+      <img src="logo_circle.png" alt="VANESSA MAKE UP" class="about-logo">
     </div>
     <div class="about-text">
       <div>
