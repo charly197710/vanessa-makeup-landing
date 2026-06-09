@@ -36,9 +36,9 @@ nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
 .section-title em{font-style:italic;color:var(--rose)}
 .section-divider{width:60px;height:1px;background:var(--rose);margin:2rem auto;position:relative}
 .section-divider::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--rose);border-radius:50%}
-section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative}
+section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative;overflow-x:hidden
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
-.about-circle{position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:1}
+.about-circle{position:relative;width:100%;max-width:3600px;margin:0 auto;aspect-ratio:1}
 .about-circle .ring{position:absolute;border-radius:50%}
 .about-circle .ring1{inset:0;border:2px solid rgba(196,131,108,.4);animation:spinCW 12s linear infinite;box-shadow:0 0 20px rgba(196,131,108,.25),inset 0 0 20px rgba(196,131,108,.12)}
 .about-circle .ring2{inset:8px;border:2px solid rgba(212,165,116,.4);animation:spinCCW 8s linear infinite;box-shadow:0 0 18px rgba(212,165,116,.2),inset 0 0 18px rgba(212,165,116,.1)}
@@ -60,7 +60,7 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative}
 .stats h4{font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400}
 .stats p{font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem}
 .cats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-@media(max-width:900px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:3rem}}
+@media(max-width:3600px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:3rem}}
 @media(max-width:600px){.cats-row{grid-template-columns:1fr}}
 .cat-block{border:1px solid rgba(196,131,108,.12);border-radius:16px;background:#0a0a0a;overflow:hidden}
 .cat-label{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);text-align:center;padding:1.2rem;letter-spacing:.1rem;font-weight:400}
