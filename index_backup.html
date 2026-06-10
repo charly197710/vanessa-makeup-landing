@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VANESSA MAKE UP</title>
+<!-- v4.0 FINAL -->
+<style>
+:root{--rose:#c4836c;--rose-pale:#e8c4b8;--gold:#d4a574;--silver:#e8e8e8;--black:#0d0d0d}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--black);color:var(--silver);overflow-x:hidden}
+header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:800px;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,13,0.88);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);border-radius:999px;z-index:1000}
+.logo{font-family:Georgia,serif;font-size:1.4rem;font-weight:500;color:var(--rose);letter-spacing:.3em;text-transform:uppercase}
+nav a{margin:0 1rem;text-decoration:none;color:var(--silver);font-weight:300;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;position:relative;transition:color .3s}
+nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--rose);transition:width .4s}
+nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
+.hero{min-height:100vh;background:radial-gradient(ellipse at center,#2a1518 0%,var(--black) 70%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(196,131,108,.15) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(212,165,116,.1) 0%,transparent 50%),radial-gradient(circle at 50% 50%,rgba(196,131,108,.08) 0%,transparent 60%);animation:bgShift 12s ease-in-out infinite}
+@keyframes bgShift{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.05)}}
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.particle{position:absolute;border-radius:50%;opacity:0;animation:floatUp linear infinite;box-shadow:0 0 12px 4px currentColor}
+.particle:nth-child(odd){background:radial-gradient(circle,#e8c4b8 0%,#c4836c 60%,transparent 100%);color:rgba(232,196,184,.8)}
+.particle:nth-child(even){background:radial-gradient(circle,#d4a574 0%,#c4836c 60%,transparent 100%);color:rgba(212,165,116,.8)}
+.particle:nth-child(3n){background:radial-gradient(circle,#f5e6d8 0%,#d4956a 50%,transparent 100%);color:rgba(245,230,216,.9);box-shadow:0 0 20px 6px rgba(212,165,116,.6)}
+@keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0}5%{opacity:1}50%{opacity:.8}95%{opacity:.6}100%{transform:translateY(-10vh) scale(1.5);opacity:0}}
+.hero-content{position:relative;z-index:2}
+.hero-sub{font-family:Georgia,serif;font-style:italic;font-size:1.3rem;color:var(--rose-pale);letter-spacing:.4rem;margin-bottom:1.5rem;animation:fadeUp 1s ease .3s both}
+.hero h1{font-family:Georgia,serif;font-size:7rem;font-weight:400;color:var(--rose);letter-spacing:.5rem;text-transform:uppercase;line-height:1;text-shadow:0 0 80px rgba(196,131,108,.3);animation:fadeUp 1s ease .5s both}
+.hero-line{width:80px;height:1px;margin:2rem auto;background:linear-gradient(90deg,transparent,var(--rose),transparent);animation:fadeUp 1s ease .7s both}
+.hero-desc{font-size:1rem;font-weight:300;letter-spacing:.3rem;text-transform:uppercase;animation:fadeUp 1s ease .9s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.section-header{text-align:center;margin-bottom:4rem}
+.section-label{font-size:.75rem;letter-spacing:.4rem;color:var(--rose);text-transform:uppercase;margin-bottom:1rem;font-weight:500}
+.section-title{font-family:Georgia,serif;font-size:3.6rem;font-weight:400;color:var(--silver);letter-spacing:.15rem;line-height:1.15}
+.section-title em{font-style:italic;color:var(--rose)}
+.section-divider{width:60px;height:1px;background:var(--rose);margin:2rem auto;position:relative}
+.section-divider::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--rose);border-radius:50%}
+section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative;overflow-x:hidden
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;justify-items:center}
+.about-circle{position:relative;width:100%;max-width:500px;margin:0 auto;aspect-ratio:1}
+.about-circle .ring{position:absolute;border-radius:50%}
+.about-circle .ring1{inset:0;border:2px solid rgba(196,131,108,.4);animation:spinCW 12s linear infinite;box-shadow:0 0 20px rgba(196,131,108,.25),inset 0 0 20px rgba(196,131,108,.12)}
+.about-circle .ring2{inset:8px;border:2px solid rgba(212,165,116,.4);animation:spinCCW 8s linear infinite;box-shadow:0 0 18px rgba(212,165,116,.2),inset 0 0 18px rgba(212,165,116,.1)}
+.about-circle .ring3{inset:16px;border:2px solid rgba(232,196,184,.35);animation:spinCW 16s linear infinite;box-shadow:0 0 15px rgba(232,196,184,.15),inset 0 0 15px rgba(232,196,184,.08)}
+.about-circle .orb{position:absolute;border-radius:50%;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:12px;animation:glow 2s ease-in-out infinite alternate}
+.about-circle .orb1{background:radial-gradient(circle,#f5e6d8 0%,#c4836c 60%,transparent 100%);box-shadow:0 0 12px 4px rgba(196,131,108,.8);animation:glow 1.5s ease-in-out infinite alternate}
+.about-circle .orb2{background:radial-gradient(circle,#e8c4b8 0%,#d4a574 60%,transparent 100%);box-shadow:0 0 12px 4px rgba(212,165,116,.8);animation:glow 2s ease-in-out infinite alternate .3s}
+.about-circle .orb3{background:radial-gradient(circle,#fff 0%,#f5e6d8 30%,#e8c4b8 60%,transparent 100%);box-shadow:0 0 8px 3px rgba(255,255,255,.9),0 0 20px 10px rgba(232,196,184,.6),0 0 40px 20px rgba(212,165,116,.2);animation:pulseSpot 3s ease-in-out infinite}
+@keyframes pulseSpot{0%,100%{transform:translateX(-50%) scale(1);opacity:.85}50%{transform:translateX(-50%) scale(1.15);opacity:1}}
+.about-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80%;height:80%;border-radius:50%;object-fit:contain;z-index:10;animation:logoSpotlight 16s linear infinite}
+@keyframes logoSpotlight{0%{box-shadow:inset -30px -20px 60px -10px rgba(255,255,255,.3)}25%{box-shadow:inset 30px -20px 60px -10px rgba(255,255,255,.3)}50%{box-shadow:inset 30px 20px 60px -10px rgba(255,255,255,.3)}75%{box-shadow:inset -30px 20px 60px -10px rgba(255,255,255,.3)}100%{box-shadow:inset -30px -20px 60px -10px rgba(255,255,255,.3)}}
+@keyframes spinCW{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes spinCCW{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
+@keyframes glow{0%{opacity:.6;transform:translateX(-50%) scale(.8)}50%{opacity:1;transform:translateX(-50%) scale(1.3)}100%{opacity:.8;transform:translateX(-50%) scale(1)}}
+@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.about-text h3{font-family:Georgia,serif;font-size:2rem;color:var(--rose);margin-bottom:2rem;font-style:italic;font-weight:400}
+.about-text p{font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:1.5rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2);text-align:center}
+.stats h4{font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400}
+.stats p{font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem}
+.cats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+@media(max-width:500px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:3rem}}
+@media(max-width:500px){.cats-row{grid-template-columns:1fr}}
+.cat-block{border:1px solid rgba(196,131,108,.12);border-radius:16px;background:#0a0a0a;overflow:hidden}
+.cat-label{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);text-align:center;padding:1.2rem;letter-spacing:.1rem;font-weight:400}
+/* CHECKBOX HACK - Estructura: input + label + gal-grid son hermanos directos */
+.gal-toggle{display:none}
+.cover-label{position:relative;cursor:pointer;display:block;overflow:hidden}
+.cover-label img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:all .5s}
+.cover-label:hover img{filter:brightness(1.08) saturate(1.1);transform:scale(1.02)}
+.cover-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(13,13,13,.75);color:var(--gold);padding:.4rem 1.2rem;border-radius:999px;font-size:.7rem;letter-spacing:.15rem;text-transform:uppercase;backdrop-filter:blur(8px);border:1px solid rgba(212,165,116,.3);transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.cover-label:hover .cover-hint{opacity:0}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:0 1rem 1rem;max-height:0;overflow:hidden;opacity:0;transition:max-height .6s ease,opacity .4s}
+@media(max-width:1000px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:450px){.gal-grid{grid-template-columns:1fr}}
+/* La clave del checkbox hack: input:checked ~ .gal-grid (hermano adyacente) */
+.gal-toggle:checked ~ .gal-grid{max-height:5000px;opacity:1}
+.gal-item{position:relative;border-radius:10px;overflow:hidden;background:#050505;aspect-ratio:1/1;border:1px solid rgba(196,131,108,.08);transition:all .3s;cursor:zoom-in}
+.gal-item:hover{border-color:rgba(196,131,108,.3);transform:scale(1.02)}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gal-item:hover img{transform:scale(1.05)}
+/* LIGHTBOX */
+#lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.96);align-items:center;justify-content:center}
+#lightbox.active{display:flex}
+#lightbox .lb-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px}
+.lb-close{position:absolute;top:1.5rem;right:2rem;color:#fff;font-size:2.5rem;cursor:pointer;background:none;border:none;z-index:10001;line-height:1}
+.lb-close:hover{color:var(--rose)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);width:48px;height:48px;border-radius:50%;font-size:1.5rem;cursor:pointer;z-index:10001;display:flex;align-items:center;justify-content:center}
+.lb-nav:hover{background:var(--rose);color:#000}
+.lb-prev{left:1.5rem}
+.lb-next{right:1.5rem}
+.lb-counter{color:var(--rose-pale);font-size:.85rem;letter-spacing:.2rem;margin-top:1rem;font-family:Georgia,serif;position:absolute;bottom:2rem}
+#servicios{background:linear-gradient(180deg,transparent,rgba(196,131,108,.02),transparent)}
+.service-group{margin-bottom:4rem}
+.service-group-title{font-family:Georgia,serif;font-size:1.8rem;color:var(--rose-pale);text-align:center;margin-bottom:2rem;letter-spacing:.15rem;font-weight:400}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.card{background:rgba(255,255,255,.02);backdrop-filter:blur(10px);border:1px solid rgba(196,131,108,.12);border-radius:18px;padding:2rem 1.6rem;transition:all .5s;position:relative;overflow:hidden;text-align:left}
+.card::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(196,131,108,.06),transparent);transition:.8s}
+.card:hover::before{left:100%}
+.card:hover{transform:translateY(-8px) scale(1.01);border-color:var(--rose);background:rgba(196,131,108,.04)}
+.card h3{font-family:Georgia,serif;font-size:1.25rem;color:var(--rose);letter-spacing:.08rem;margin-bottom:.6rem;font-weight:400}
+.card ul{list-style:none;margin-bottom:1rem}
+.card ul li{font-weight:300;font-size:.8rem;color:rgba(232,232,232,.55);line-height:1.65;padding-left:.9rem;position:relative}
+.card ul li::before{content:'—';position:absolute;left:0;color:var(--rose);opacity:.5}
+.card .price{font-family:Georgia,serif;font-size:1.7rem;color:var(--silver);letter-spacing:.08rem;text-align:right}
+.card .price small{font-size:.7rem;color:rgba(232,232,232,.35);display:block;margin-top:.2rem}
+.glitter-card{border:1px solid rgba(212,165,116,.25);background:linear-gradient(135deg,rgba(196,131,108,.04),rgba(212,165,116,.02))}
+.glitter-badge{display:inline-block;background:rgba(212,165,116,.12);color:var(--gold);padding:.25rem .7rem;border-radius:999px;font-size:.65rem;letter-spacing:.12rem;text-transform:uppercase;margin-bottom:.8rem;border:1px solid rgba(212,165,116,.25)}
+#contacto{text-align:center;padding:10rem 2rem;position:relative}
+#contacto::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(196,131,108,.08),transparent 70%)}
+#contacto h2{font-family:Georgia,serif;font-size:4.5rem;font-weight:400;color:var(--silver);letter-spacing:.2rem;position:relative}
+#contacto h2 em{font-style:italic;color:var(--rose)}
+.cta{display:inline-block;background:transparent;color:var(--rose);padding:1.2rem 4rem;border:1px solid var(--rose);font-size:.88rem;letter-spacing:.28rem;text-transform:uppercase;cursor:pointer;transition:all .4s;position:relative;overflow:hidden;text-decoration:none;font-weight:500;margin-top:2rem}
+.cta:hover{background:var(--rose);color:var(--black)}
+.contact-info{margin-top:4rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;font-size:.82rem;letter-spacing:.12rem;color:rgba(232,232,232,.55)}
+.contact-info strong{color:var(--rose)}
+footer{text-align:center;padding:3rem;background:var(--black);border-top:1px solid rgba(196,131,108,.08)}
+.footer-logo{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);letter-spacing:.4rem;margin-bottom:1rem}
+.footer-text{font-size:.72rem;color:#fff;letter-spacing:.18rem;text-transform:uppercase;opacity:.8}
+@media(max-width:1024px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{gap:4rem}}
+@media(max-width:768px){.hero h1{font-size:3.5rem}.section-title{font-size:2.2rem}#contacto h2{font-size:2.5rem}.cards{grid-template-columns:1fr}.cats-row{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:3rem}.about-circle{max-width:350px}.stats{grid-template-columns:1fr;gap:1.5rem}.contact-info{flex-direction:column;gap:1rem}header{padding:.8rem 1.2rem;width:calc(100% - 24px)}.logo{font-size:1.1rem}nav a{margin:0 .5rem;font-size:.7rem}}
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:9999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:all .3s ease;animation:waPulse 2s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.12);box-shadow:0 6px 30px rgba(37,211,102,.6);background:#1da851}
+.wa-float svg{width:30px;height:30px}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{box-shadow:0 4px 30px rgba(37,211,102,.7)}}
+@media(max-width:768px){.wa-float{bottom:16px;right:16px;width:52px;height:52px}.wa-float svg{width:26px;height:26px}}
+.wa-icon{font-size:1.2rem}
+@media(max-width:480px){.hero h1{font-size:2.5rem}.hero-sub{font-size:1rem}.hero-desc{font-size:.8rem}.section-title{font-size:1.8rem}#contacto h2{font-size:2rem}.cat-label{font-size:1.2rem}.card{padding:1.5rem 1rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">VANESSA MAKE UP</div>
+  <nav>
+    <a href="#categorias">Categorías</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-sub">Maquillaje Profesional</div>
+      <h1>Vanessa</h1>
+      <div class="hero-line"></div>
+      <div class="hero-desc">Tu piel, tu estilo, tu momento</div>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="about-grid">
+    <div class="about-circle">
+      <div class="ring ring1"><span class="orb orb1"></span></div>
+      <div class="ring ring2"><span class="orb orb2"></span></div>
+      <div class="ring ring3"><span class="orb orb3"></span></div>
+      <img src="logo_circle.png" alt="VANESSA MAKE UP" class="about-logo">
+    </div>
+    <div class="about-text">
+      <div>
+        <h3>Elegancia serena, oficio impecable</h3>
+        <p>Vanessa Make Up nace de la convicción de que cada rostro cuenta una historia. Rose dorado sobre negro: lujo contenido, sin excesos, con memoria.</p>
+        <p>Especialidad en estudio de maquillaje para eventos: Quince años, Bodas, Grados, Fantasía y Social. Cada servicio incluye preparación de piel profesional y productos de alta gama.</p>
+      </div>
+      <div class="stats">
+        <div><h4>500+</h4><p>Eventos</p></div>
+        <div><h4>5</h4><p>Años Experiencia</p></div>
+        <div><h4>100%</h4><p>Compromiso</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="categorias">
+  <div class="section-header">
+    <div class="section-label">Catálogo</div>
+    <h2 class="section-title">Categorías <em>de estilo</em></h2>
+    <div class="section-divider"></div>
+  </div>
+<div class="cats-row">
+    <div class="cat-block">
+      <div class="cat-label">15 Años</div>
+      <input type="checkbox" class="gal-toggle" id="gal-15-anios">
+      <label class="cover-label" for="gal-15-anios">
+        <img src="photos/15-anios/cover.jpg" alt="15 Años">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="photos/15-anios/img5.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/15-anios/img6.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/15-anios/img7.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/15-anios/img8.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/15-anios/img9.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/15-anios/img10.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/15-anios/img11.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="cat-block">
+      <div class="cat-label">Novias</div>
+      <input type="checkbox" class="gal-toggle" id="gal-novias">
+      <label class="cover-label" for="gal-novias">
+        <img src="photos/novias/cover.jpg" alt="Novias">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="photos/novias/img2.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+    <div class="cat-block">
+      <div class="cat-label">Noche Glam</div>
+      <input type="checkbox" class="gal-toggle" id="gal-noche-glam">
+      <label class="cover-label" for="gal-noche-glam">
+        <img src="photos/noche-glam/cover.jpg" alt="Noche Glam">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="photos/noche-glam/img2.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img3.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img4.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img5.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img6.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img7.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img8.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img9.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img10.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img11.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/noche-glam/img12.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+</div>
+<section id="categorias-2">
+<div class="cats-row">
+    <div class="cat-block">
+      <div class="cat-label">Peinados</div>
+      <input type="checkbox" class="gal-toggle" id="gal-peinados">
+      <label class="cover-label" for="gal-peinados">
+        <img src="photos/peinados/cover.jpg" alt="Peinados">
+        <div class="cover-hint">Ver galería</div>
+      </label>
+      <div class="gal-grid">
+        <div class="gal-item"><img src="photos/peinados/img2.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/peinados/img3.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/peinados/img4.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/peinados/img5.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/peinados/img6.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/peinados/img7.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/peinados/img8.jpg" alt="" loading="lazy"></div>
+        <div class="gal-item"><img src="photos/peinados/img9.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+</div>
+</section>
+<section id="servicios">
+  <div class="section-header">
+    <div class="section-label">Servicios</div>
+    <h2 class="section-title">Nuestros <em>servicios</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="service-group">
+    <div class="service-group-title">Tratamientos Faciales</div>
+    <div class="cards">
+      <div class="card"><h3>Limpieza Facial</h3><ul><li>Limpieza profunda de poros</li><li>Exfoliación suave</li><li>Tónico e hidratación</li></ul><div class="price">$60.000</div></div>
+      <div class="card"><h3>Limpieza Facial Profunda</h3><ul><li>Limpieza + extracción</li><li>Mascarilla purificante</li><li>Hidratación intensiva</li></ul><div class="price">$80.000</div></div>
+      <div class="card"><h3>Hidratación Profunda</h3><ul><li>Sero hidratante premium</li><li>Mascarilla nutritiva</li><li>Masaje facial relajante</li></ul><div class="price">$90.000</div></div>
+    </div>
+  </div>
+  <div class="service-group">
+    <div class="service-group-title">Maquillaje</div>
+    <div class="cards">
+      <div class="card"><h3>Soft Glam</h3><ul><li>Preparación de piel</li><li>Maquillaje natural luminoso</li><li>Pestañas incluidas</li></ul><div class="price">$100.000</div></div>
+      <div class="card"><h3>Full Glam</h3><ul><li>Preparación de piel</li><li>Pestañas incluidas</li><li>Glitter corporal</li><li>Retoque labial</li></ul><div class="price">$110.000</div></div>
+    </div>
+  </div>
+  <div class="service-group">
+    <div class="service-group-title">Quinceañeras y Novias</div>
+    <div class="cards">
+      <div class="card"><h3>Paquete Básico</h3><ul><li>Preparación de piel</li><li>Maquillaje día del evento</li><li>Pestañas</li></ul><div class="price">$130.000</div></div>
+      <div class="card"><h3>Paquete con Pestañas</h3><ul><li>Preparación de piel</li><li>Prueba de maquillaje</li><li>Maquillaje día del evento</li><li>Pestañas</li></ul><div class="price">$200.000</div></div>
+      <div class="card"><h3>Paquete Hidratación Previa</h3><ul><li>Hidratación facial previa al evento</li><li>Preparación de piel</li><li>Maquillaje día del evento</li><li>Pestañas</li><li>Kit de retoque</li></ul><div class="price">$160.000</div></div>
+      <div class="card"><h3>Paquete Completo</h3><ul><li>Preparación de piel</li><li>Maquillaje día del evento</li><li>Pestañas</li><li>Peinado</li></ul><div class="price">$230.000</div></div>
+      <div class="card"><h3>Paquete Premium</h3><ul><li>Preparación de piel</li><li>Maquillaje día del evento</li><li>Peinado día del evento</li><li>Prueba de maquillaje y peinado</li><li>Kit de retoque</li><li>Pestañas</li><li>Glitter corporal</li></ul><div class="price">$400.000</div></div>
+      <div class="card"><h3>Paquete Hidratación Completo</h3><ul><li>Hidratación facial previa al evento</li><li>Prueba de maquillaje</li><li>Preparación de piel</li><li>Maquillaje día del evento</li><li>Peinado día del evento</li><li>Pestañas</li><li>Kit de retoque</li><li>Glitter corporal</li></ul><div class="price">$450.000</div></div>
+      <div class="card"><h3>Paquete Hidratación + Pestañas</h3><ul><li>Hidratación facial previa al evento</li><li>Preparación de piel</li><li>Prueba de maquillaje</li><li>Maquillaje día del evento</li><li>Kit de retoque</li><li>Pestañas</li></ul><div class="price">$250.000</div></div>
+    </div>
+  </div>
+  <div class="service-group">
+    <div class="service-group-title">Glitter Bar — Día del Evento</div>
+    <div class="cards">
+      <div class="card glitter-card">
+        <div class="glitter-badge">✨ Servicio Especial</div>
+        <h3>Glitter Bar — 1h 30min</h3>
+        <ul><li>Maquillaje con glitter de colores</li><li>Maquillaje neón</li><li>Gemas faciales</li><li>Tatuajes temporales</li><li>Strass (pedrería facial)</li><li>Dos maquilladoras</li></ul>
+        <div class="price">$270.000 <small>1 hora 30 minutos</small></div>
+      </div>
+      <div class="card glitter-card">
+        <div class="glitter-badge">✨ Servicio Especial</div>
+        <h3>Glitter Bar — 2 horas</h3>
+        <ul><li>Maquillaje con glitter de colores</li><li>Maquillaje neón</li><li>Gemas faciales</li><li>Tatuajes temporales</li><li>Strass (pedrería facial)</li><li>Dos maquilladoras</li></ul>
+        <div class="price">$320.000 <small>2 horas</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contacto">
+  <h2>Contacto</h2>
+  <div class="section-divider"></div>
+  <div style="max-width:600px;margin:0 auto 2.5rem;text-align:left;">
+    <h3 style="font-family:Georgia,serif;font-size:1.4rem;color:var(--rose);margin-bottom:1rem;text-align:center;">Servicios / Especialidad</h3>
+    <p style="font-weight:300;line-height:1.8;color:rgba(232,232,232,.7);text-align:center;margin-bottom:1.5rem;">Especialidad en estudio de maquillaje para eventos</p>
+    <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem;">
+      <span style="background:rgba(196,131,108,.15);color:var(--rose-pale);padding:.4rem 1rem;border-radius:999px;font-size:.85rem;">Quince años</span>
+      <span style="background:rgba(196,131,108,.15);color:var(--rose-pale);padding:.4rem 1rem;border-radius:999px;font-size:.85rem;">Bodas</span>
+      <span style="background:rgba(196,131,108,.15);color:var(--rose-pale);padding:.4rem 1rem;border-radius:999px;font-size:.85rem;">Grados</span>
+      <span style="background:rgba(196,131,108,.15);color:var(--rose-pale);padding:.4rem 1rem;border-radius:999px;font-size:.85rem;">Fantasía</span>
+      <span style="background:rgba(196,131,108,.15);color:var(--rose-pale);padding:.4rem 1rem;border-radius:999px;font-size:.85rem;">Social</span>
+    </div>
+  </div>
+  <a href="https://wa.me/573166140335?text=Hola%20Vanessa,%20quiero%20agendar%20una%20cita" class="cta" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+  <div class="contact-info">
+    <span>📍 <strong>Cra. 13 N° 9 - 40 / Segundo piso<br>Festejos Santa Ella - La Cita - Funza</strong></span>
+    <span>📞 <strong>+57 316 614 0335</strong></span>
+    <span><a href="https://www.instagram.com/vanessa_makeup_studio_" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;padding:.6rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.85rem;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 4px 15px rgba(253,29,29,.4)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram</a></span>
+    <span><a href="https://www.tiktok.com/@vanessa_makeup_st1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;background:#000;color:#fff;padding:.6rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.85rem;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 4px 15px rgba(255,255,255,.2)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52V6.8a4.84 4.84 0 01-1-.11z"/></svg> TikTok</a></span>
+  </div>
+</section>
+<!-- BOTON WHATSAPP FLOTANTE -->
+<a href="https://wa.me/573166140335?text=Hola%20Vanessa,%20quiero%20agendar%20una%20cita" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<footer>
+  <div class="footer-logo">VANESSA MAKE UP</div>
+  <p class="footer-text">© 2026 — Maquillaje Profesional</p>
+  <p class="footer-text" style="margin-top:.5rem;font-size:.65rem;opacity:.9;">Creado por Nexara IA Studio</p>
+  <div style="margin-top:1rem;">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=charly197710.vanessa-makeup-landing&left_text=Visitantes&right_color=c4836c&left_color=1a1a1a" alt="Contador de visitantes" style="height:20px;">
+  </div>
+</footer>
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button class="lb-close" id="lb-close">&times;</button>
+  <button class="lb-nav lb-prev" id="lb-prev">&#8249;</button>
+  <img src="" alt="" class="lb-img" id="lb-img">
+  <button class="lb-nav lb-next" id="lb-next">&#8250;</button>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+<script>
+// Particles
+var pc=document.getElementById('particles');
+if(pc){for(var i=0;i<60;i++){var p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(Math.random()*15+10)+'s';p.style.animationDelay=(Math.random()*15)+'s';var s=(Math.random()*6+2)+'px';p.style.width=s;p.style.height=s;p.style.opacity=(Math.random()*.5+.5);pc.appendChild(p)}}
+// Lightbox
+var lb=document.getElementById('lightbox');
+var lbImg=document.getElementById('lb-img');
+var lbCounter=document.getElementById('lb-counter');
+var lbImages=[];
+var lbIndex=0;
+function openLB(imgs,idx){
+  lbImages=imgs;lbIndex=idx;
+  lbImg.src=imgs[idx];
+  lbCounter.textContent=(idx+1)+' / '+imgs.length;
+  lb.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){lb.classList.remove('active');document.body.style.overflow=''}
+function prevLB(){lbIndex=(lbIndex-1+lbImages.length)%lbImages.length;lbImg.src=lbImages[lbIndex];lbCounter.textContent=(lbIndex+1)+' / '+lbImages.length}
+function nextLB(){lbIndex=(lbIndex+1)%lbImages.length;lbImg.src=lbImages[lbIndex];lbCounter.textContent=(lbIndex+1)+' / '+lbImages.length}
+document.querySelectorAll('.gal-item').forEach(function(el){
+  el.addEventListener('click',function(){
+    var grid=this.closest('.gal-grid');
+    var imgs=Array.from(grid.querySelectorAll('.gal-item img')).map(function(i){return i.src});
+    var idx=imgs.indexOf(this.querySelector('img').src);
+    openLB(imgs,idx);
+  });
+});
+document.getElementById('lb-close').addEventListener('click',closeLB);
+document.getElementById('lb-prev').addEventListener('click',prevLB);
+document.getElementById('lb-next').addEventListener('click',nextLB);
+lb.addEventListener('click',function(e){if(e.target===lb)closeLB()});
+document.addEventListener('keydown',function(e){
+  if(!lb.classList.contains('active'))return;
+  if(e.key==='Escape')closeLB();
+  if(e.key==='ArrowLeft')prevLB();
+  if(e.key==='ArrowRight')nextLB();
+});
+</script>
+</body>
+</html>
+<!-- v5.0 -->
