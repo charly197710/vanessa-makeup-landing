@@ -43,7 +43,7 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative;overf
 .about-circle .ring1{inset:0;border:2px solid rgba(196,131,108,.4);animation:spinCW 12s linear infinite;box-shadow:0 0 20px rgba(196,131,108,.25),inset 0 0 20px rgba(196,131,108,.12)}
 .about-circle .ring2{inset:12px;border:2px solid rgba(212,165,116,.4);animation:spinCCW 8s linear infinite;box-shadow:0 0 18px rgba(212,165,116,.2),inset 0 0 18px rgba(212,165,116,.1)}
 .about-circle .ring3{inset:24px;border:2px solid rgba(232,196,184,.35);animation:spinCW 16s linear infinite;box-shadow:0 0 15px rgba(232,196,184,.15),inset 0 0 15px rgba(232,196,184,.08)}
-.about-circle .orb{position:absolute;border-radius:50%;top:0;left:50%;width:16px;height:16px;margin-top:-8px;animation:glow 2s ease-in-out infinite alternate}
+.about-circle .orb{position:absolute;border-radius:50%;top:50%;left:50%;width:16px;height:16px;margin-top:-8px;margin-left:-8px;animation:glow 2s ease-in-out infinite alternate}
 .about-circle .orb1{background:radial-gradient(circle,#f5e6d8 0%,#c4836c 60%,transparent 100%);box-shadow:0 0 12px 4px rgba(196,131,108,.8);animation:orbitCW 3s linear infinite,glow 1.5s ease-in-out infinite alternate}
 .about-circle .orb2{background:radial-gradient(circle,#e8c4b8 0%,#d4a574 60%,transparent 100%);box-shadow:0 0 12px 4px rgba(212,165,116,.8);animation:orbitCCW 5s linear infinite,glow 2s ease-in-out infinite alternate .3s}
 .about-circle .orb3{background:radial-gradient(circle,#fff 0%,#f5e6d8 30%,#e8c4b8 60%,transparent 100%);box-shadow:0 0 8px 3px rgba(255,255,255,.9),0 0 20px 10px rgba(232,196,184,.6),0 0 40px 20px rgba(212,165,116,.2);animation:orbitCW 7s linear infinite,pulseSpot 3s ease-in-out infinite}
@@ -155,9 +155,12 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
   <div style="display:flex;align-items:center;justify-content:space-between;gap:4rem;flex-wrap:wrap;">
     <div style="flex:1;min-width:300px;display:flex;align-items:center;justify-content:center;">
       <div class="about-circle">
-        <div class="ring ring1"><span class="orb orb1"></span></div>
-        <div class="ring ring2"><span class="orb orb2"></span></div>
-        <div class="ring ring3"><span class="orb orb3"></span></div>
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+        <span class="orb orb1"></span>
+        <span class="orb orb2"></span>
+        <span class="orb orb3"></span>
         <img src="logo_circle.png" alt="VANESSA MAKE UP" class="about-logo">
       </div>
     </div>
