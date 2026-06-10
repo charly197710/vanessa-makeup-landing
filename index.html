@@ -38,7 +38,7 @@ nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
 .section-divider::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--rose);border-radius:50%}
 section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative;overflow-x:hidden
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.about-circle{position:relative;width:100%;max-width:350px;margin:0 auto;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.about-circle{position:relative;width:350px;height:350px;display:flex;align-items:center;justify-content:center}
 .about-circle .ring{position:absolute;border-radius:50%}
 .about-circle .ring1{inset:0;border:2px solid rgba(196,131,108,.4);animation:spinCW 12s linear infinite;box-shadow:0 0 20px rgba(196,131,108,.25),inset 0 0 20px rgba(196,131,108,.12)}
 .about-circle .ring2{inset:8px;border:2px solid rgba(212,165,116,.4);animation:spinCCW 8s linear infinite;box-shadow:0 0 18px rgba(212,165,116,.2),inset 0 0 18px rgba(212,165,116,.1)}
@@ -54,8 +54,6 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative;overf
 @keyframes spinCCW{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
 @keyframes glow{0%{opacity:.6;transform:translateX(-50%) scale(.8)}50%{opacity:1;transform:translateX(-50%) scale(1.3)}100%{opacity:.8;transform:translateX(-50%) scale(1)}}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.about-text h3{font-family:Georgia,serif;font-size:2rem;color:var(--rose);margin-bottom:2rem;font-style:italic;font-weight:400}
-.about-text p{font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:1.5rem}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2);text-align:center}
 .stats h4{font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400}
 .stats p{font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem}
@@ -152,23 +150,23 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
   </div>
 </section>
 <section id="about">
-  <div class="about-grid">
-    <div class="about-circle">
-      <div class="ring ring1"><span class="orb orb1"></span></div>
-      <div class="ring ring2"><span class="orb orb2"></span></div>
-      <div class="ring ring3"><span class="orb orb3"></span></div>
-      <img src="logo_circle.png" alt="VANESSA MAKE UP" class="about-logo">
-    </div>
-    <div class="about-text">
-      <div>
-        <h3>Elegancia serena, oficio impecable</h3>
-        <p>Vanessa Make Up nace de la convicción de que cada rostro cuenta una historia. Rose dorado sobre negro: lujo contenido, sin excesos, con memoria.</p>
-        <p>Especialidad en estudio de maquillaje para eventos: Quince años, Bodas, Grados, Fantasía y Social. Cada servicio incluye preparación de piel profesional y productos de alta gama.</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:4rem;flex-wrap:wrap;">
+    <div style="flex:1;min-width:300px;display:flex;align-items:center;justify-content:center;">
+      <div class="about-circle">
+        <div class="ring ring1"><span class="orb orb1"></span></div>
+        <div class="ring ring2"><span class="orb orb2"></span></div>
+        <div class="ring ring3"><span class="orb orb3"></span></div>
+        <img src="logo_circle.png" alt="VANESSA MAKE UP" class="about-logo">
       </div>
-      <div class="stats">
-        <div><h4>500+</h4><p>Eventos</p></div>
-        <div><h4>5</h4><p>Años Experiencia</p></div>
-        <div><h4>100%</h4><p>Compromiso</p></div>
+    </div>
+    <div style="flex:1;min-width:300px;">
+      <h3 style="font-family:Georgia,serif;font-size:2rem;color:var(--rose);margin-bottom:2rem;font-style:italic;font-weight:400;">Elegancia serena, oficio impecable</h3>
+      <p style="font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:1.5rem;">Vanessa Make Up nace de la convicción de que cada rostro cuenta una historia. Rose dorado sobre negro: lujo contenido, sin excesos, con memoria.</p>
+      <p style="font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:2rem;">Especialidad en estudio de maquillaje para eventos: Quince años, Bodas, Grados, Fantasía y Social. Cada servicio incluye preparación de piel profesional y productos de alta gama.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2);">
+        <div><h4 style="font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400;">500+</h4><p style="font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem;">Eventos</p></div>
+        <div><h4 style="font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400;">5</h4><p style="font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem;">Años Experiencia</p></div>
+        <div><h4 style="font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400;">100%</h4><p style="font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem;">Compromiso</p></div>
       </div>
     </div>
   </div>
