@@ -15,7 +15,7 @@ header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(10
 nav a{margin:0 1rem;text-decoration:none;color:var(--silver);font-weight:300;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;position:relative;transition:color .3s}
 nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--rose);transition:width .4s}
 nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
-.hero{min-height:100vh;background:radial-gradient(ellipse at center,#2a1518 0%,var(--black) 70%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.hero{min-height:100vh;background:radial-gradient(ellipse at center,#2a1518 0%,var(--black) 70%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:0 1rem}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(196,131,108,.15) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(212,165,116,.1) 0%,transparent 50%),radial-gradient(circle at 50% 50%,rgba(196,131,108,.08) 0%,transparent 60%);animation:bgShift 12s ease-in-out infinite}
 @keyframes bgShift{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.05)}}
 .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
@@ -53,8 +53,8 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative;overf
 .stats h4{font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400}
 .stats p{font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem}
 .cats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-@media(max-width:500px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:3rem}}
-@media(max-width:500px){.cats-row{grid-template-columns:1fr}}
+.about-grid{grid-template-columns:1fr;gap:3rem}}
+}
 .cat-block{border:1px solid rgba(196,131,108,.12);border-radius:16px;background:#0a0a0a;overflow:hidden}
 .cat-label{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);text-align:center;padding:1.2rem;letter-spacing:.1rem;font-weight:400}
 /* CHECKBOX HACK - Estructura: input + label + gal-grid son hermanos directos */
@@ -65,9 +65,9 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative;overf
 .cover-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(13,13,13,.75);color:var(--gold);padding:.4rem 1.2rem;border-radius:999px;font-size:.7rem;letter-spacing:.15rem;text-transform:uppercase;backdrop-filter:blur(8px);border:1px solid rgba(212,165,116,.3);transition:opacity .3s;pointer-events:none;white-space:nowrap}
 .cover-label:hover .cover-hint{opacity:0}
 .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:0 1rem 1rem;max-height:0;overflow:hidden;opacity:0;transition:max-height .6s ease,opacity .4s}
-@media(max-width:1000px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:700px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:450px){.gal-grid{grid-template-columns:1fr}}
+}
+}
+}
 /* La clave del checkbox hack: input:checked ~ .gal-grid (hermano adyacente) */
 .gal-toggle:checked ~ .gal-grid{max-height:5000px;opacity:1}
 .gal-item{position:relative;border-radius:10px;overflow:hidden;background:#050505;aspect-ratio:1/1;border:1px solid rgba(196,131,108,.08);transition:all .3s;cursor:zoom-in}
@@ -112,14 +112,37 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative;overf
 footer{text-align:center;padding:3rem;background:var(--black);border-top:1px solid rgba(196,131,108,.08)}
 .footer-logo{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);letter-spacing:.4rem;margin-bottom:1rem}
 .footer-text{font-size:.72rem;color:#fff;letter-spacing:.18rem;text-transform:uppercase;opacity:.8}
-@media(max-width:1024px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{gap:4rem}}
-@media(max-width:768px){.hero h1{font-size:2.5rem;letter-spacing:.2rem}.hero-sub{font-size:.9rem;letter-spacing:.2rem}.hero-desc{font-size:.75rem;letter-spacing:.15rem}.section-title{font-size:1.6rem}#contacto h2{font-size:1.8rem}.cards{grid-template-columns:1fr}.cats-row{grid-template-columns:1fr;gap:1rem}.about-circle{width:250px;height:250px}.stats{grid-template-columns:1fr;gap:1rem}.contact-info{flex-direction:column;gap:1rem;font-size:.75rem}header{padding:.6rem 1rem;width:calc(100% - 16px);top:8px}.logo{font-size:.9rem}nav a{margin:0 .3rem;font-size:.6rem}section{padding:3rem 1rem}.cat-block{border-radius:12px}.cat-label{font-size:1rem;padding:.6rem}.card{padding:1rem}.price{font-size:1.2rem}}
+.about-grid{gap:4rem}}
+.hero-sub{font-size:.9rem;letter-spacing:.2rem}.hero-desc{font-size:.75rem;letter-spacing:.15rem}.section-title{font-size:1.6rem}#contacto h2{font-size:1.8rem}.cards{grid-template-columns:1fr}.cats-row{grid-template-columns:1fr;gap:1rem}.about-circle{width:250px;height:250px}.stats{grid-template-columns:1fr;gap:1rem}.contact-info{flex-direction:column;gap:1rem;font-size:.75rem}header{padding:.6rem 1rem;width:calc(100% - 16px);top:8px}.logo{font-size:.9rem}nav a{margin:0 .3rem;font-size:.6rem}section{padding:3rem 1rem}.cat-block{border-radius:12px}.cat-label{font-size:1rem;padding:.6rem}.card{padding:1rem}.price{font-size:1.2rem}}
 .wa-float{position:fixed;bottom:24px;right:24px;z-index:9999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:all .3s ease;animation:waPulse 2s ease-in-out infinite}
 .wa-float:hover{transform:scale(1.12);box-shadow:0 6px 30px rgba(37,211,102,.6);background:#1da851}
 .wa-float svg{width:30px;height:30px}
 @keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{box-shadow:0 4px 30px rgba(37,211,102,.7)}}
-@media(max-width:768px){.wa-float{bottom:16px;right:16px;width:52px;height:52px}.wa-float svg{width:26px;height:26px}}
+.wa-float svg{width:26px;height:26px}}
 .wa-icon{font-size:1.2rem}
+
+@media(max-width:768px){
+  .hero h1{font-size:2.2rem;letter-spacing:.15rem}
+  .hero-sub{font-size:.85rem;letter-spacing:.2rem}
+  .hero-desc{font-size:.7rem;letter-spacing:.1rem}
+  .section-title{font-size:1.5rem}
+  #contacto h2{font-size:1.6rem}
+  .cards{grid-template-columns:1fr}
+  .cats-row{grid-template-columns:1fr;gap:1rem}
+  .about-circle{width:220px;height:220px}
+  .stats{grid-template-columns:1fr;gap:1rem}
+  .contact-info{flex-direction:column;gap:1rem;font-size:.75rem}
+  header{padding:.5rem .8rem;width:calc(100% - 12px);top:6px}
+  .logo{font-size:.8rem;letter-spacing:.15rem}
+  nav a{margin:0 .2rem;font-size:.55rem;letter-spacing:.1rem}
+  section{padding:2rem .8rem}
+  .cat-block{border-radius:10px}
+  .cat-label{font-size:.9rem;padding:.5rem}
+  .card{padding:.8rem}
+  .price{font-size:1.1rem}
+  .wa-float{width:48px;height:48px;bottom:12px;right:12px}
+  .wa-float svg{width:24px;height:24px}
+}
 </style>
 </head>
 <body>
