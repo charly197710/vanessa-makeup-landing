@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VANESSA MAKE UP</title>
-<!-- v4.0 FINAL -->
 <style>
 :root{--rose:#c4836c;--rose-pale:#e8c4b8;--gold:#d4a574;--silver:#e8e8e8;--black:#0d0d0d}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -15,18 +14,15 @@ header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:calc(10
 nav a{margin:0 1rem;text-decoration:none;color:var(--silver);font-weight:300;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;position:relative;transition:color .3s}
 nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--rose);transition:width .4s}
 nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
-.hero{min-height:100vh;background:radial-gradient(ellipse at center,#2a1518 0%,var(--black) 70%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(196,131,108,.15) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(212,165,116,.1) 0%,transparent 50%),radial-gradient(circle at 50% 50%,rgba(196,131,108,.08) 0%,transparent 60%);animation:bgShift 12s ease-in-out infinite}
-@keyframes bgShift{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.7;transform:scale(1.05)}}
+.hero{min-height:100vh;background:radial-gradient(ellipse at center,#2a1518 0%,var(--black) 70%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:0 1rem}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(196,131,108,.15) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(212,165,116,.1) 0%,transparent 50%)}
 .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.particle{position:absolute;border-radius:50%;opacity:0;animation:floatUp linear infinite;box-shadow:0 0 12px 4px currentColor}
-.particle:nth-child(odd){background:radial-gradient(circle,#e8c4b8 0%,#c4836c 60%,transparent 100%);color:rgba(232,196,184,.8)}
-.particle:nth-child(even){background:radial-gradient(circle,#d4a574 0%,#c4836c 60%,transparent 100%);color:rgba(212,165,116,.8)}
-.particle:nth-child(3n){background:radial-gradient(circle,#f5e6d8 0%,#d4956a 50%,transparent 100%);color:rgba(245,230,216,.9);box-shadow:0 0 20px 6px rgba(212,165,116,.6)}
-@keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0}5%{opacity:1}50%{opacity:.8}95%{opacity:.6}100%{transform:translateY(-10vh) scale(1.5);opacity:0}}
+.particle{position:absolute;border-radius:50%;opacity:0;animation:floatUp linear infinite}
+.particle:nth-child(odd){background:var(--rose);opacity:.7}
+.particle:nth-child(even){background:var(--gold);opacity:.5}
+@keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0}5%{opacity:.8}100%{transform:translateY(-10vh) scale(1);opacity:0}}
 .hero-content{position:relative;z-index:2}
-.hero-sub{font-family:Georgia,serif;font-style:italic;font-size:4.5rem;color:var(--silver);letter-spacing:1rem;margin-bottom:2.5rem;font-weight:900;animation:fadeUp 1s ease .3s both;white-space:nowrap}
-.hero h1{font-family:Georgia,serif;font-size:7rem;font-weight:400;color:var(--rose);letter-spacing:.5rem;text-transform:uppercase;line-height:1;text-shadow:0 0 80px rgba(196,131,108,.3);animation:fadeUp 1s ease .5s both;word-break:keep-all;overflow-wrap:normal}
+.hero-sub{font-family:Georgia,serif;font-style:italic;font-size:4.5rem;font-weight:900;color:var(--silver);letter-spacing:1rem;margin-bottom:2rem;animation:fadeUp 1s ease .3s both}
 .hero-line{width:80px;height:1px;margin:2rem auto;background:linear-gradient(90deg,transparent,var(--rose),transparent);animation:fadeUp 1s ease .7s both}
 .hero-desc{font-size:1.3rem;font-weight:600;letter-spacing:.4rem;text-transform:uppercase;animation:fadeUp 1s ease .9s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
@@ -36,28 +32,21 @@ nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
 .section-title em{font-style:italic;color:var(--rose)}
 .section-divider{width:60px;height:1px;background:var(--rose);margin:2rem auto;position:relative}
 .section-divider::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--rose);border-radius:50%}
-section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.about-circle{position:relative;width:500px;height:500px;display:flex;align-items:center;justify-content:center}
+section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative}
+.about-circle{position:relative;width:500px;height:500px;display:flex;align-items:center;justify-content:center;margin:0 auto}
 .about-circle .ring{position:absolute;border-radius:50%}
-.about-circle .ring1{inset:0;border:2px solid rgba(196,131,108,.4);animation:spinCW 12s linear infinite;box-shadow:0 0 20px rgba(196,131,108,.25),inset 0 0 20px rgba(196,131,108,.12)}
-.about-circle .ring2{inset:12px;border:2px solid rgba(212,165,116,.4);animation:spinCCW 8s linear infinite;box-shadow:0 0 18px rgba(212,165,116,.2),inset 0 0 18px rgba(212,165,116,.1)}
-.about-circle .ring3{inset:24px;border:2px solid rgba(232,196,184,.35);animation:spinCW 16s linear infinite;box-shadow:0 0 15px rgba(232,196,184,.15),inset 0 0 15px rgba(232,196,184,.08)}
-.about-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80%;height:80%;border-radius:50%;object-fit:contain;z-index:10;animation:logoSpotlight 16s linear infinite}
-@keyframes logoSpotlight{0%{box-shadow:inset -30px -20px 60px -10px rgba(255,255,255,.3)}25%{box-shadow:inset 30px -20px 60px -10px rgba(255,255,255,.3)}50%{box-shadow:inset 30px 20px 60px -10px rgba(255,255,255,.3)}75%{box-shadow:inset -30px 20px 60px -10px rgba(255,255,255,.3)}100%{box-shadow:inset -30px -20px 60px -10px rgba(255,255,255,.3)}}
+.about-circle .ring1{inset:0;border:2px solid rgba(196,131,108,.4);animation:spinCW 12s linear infinite}
+.about-circle .ring2{inset:12px;border:2px solid rgba(212,165,116,.4);animation:spinCCW 8s linear infinite}
+.about-circle .ring3{inset:24px;border:2px solid rgba(232,196,184,.35);animation:spinCW 16s linear infinite}
+.about-logo{position:absolute;width:80%;height:80%;border-radius:50%;object-fit:contain;z-index:10}
 @keyframes spinCW{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes spinCCW{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
-@keyframes glow{0%{opacity:.6;transform:translateX(-50%) scale(.8)}50%{opacity:1;transform:translateX(-50%) scale(1.3)}100%{opacity:.8;transform:translateX(-50%) scale(1)}}
-@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2);text-align:center}
-.stats h4{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);font-weight:400}
-.stats p{font-size:.65rem;letter-spacing:.1rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.3rem}
+.stats h4{font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400}
+.stats p{font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem}
 .cats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
-@media(max-width:500px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:3rem}}
-@media(max-width:500px){.cats-row{grid-template-columns:1fr}}
 .cat-block{border:1px solid rgba(196,131,108,.12);border-radius:16px;background:#0a0a0a;overflow:hidden}
 .cat-label{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);text-align:center;padding:1.2rem;letter-spacing:.1rem;font-weight:400}
-/* CHECKBOX HACK - Estructura: input + label + gal-grid son hermanos directos */
 .gal-toggle{display:none}
 .cover-label{position:relative;cursor:pointer;display:block;overflow:hidden}
 .cover-label img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:all .5s}
@@ -65,16 +54,11 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative
 .cover-hint{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);background:rgba(13,13,13,.75);color:var(--gold);padding:.4rem 1.2rem;border-radius:999px;font-size:.7rem;letter-spacing:.15rem;text-transform:uppercase;backdrop-filter:blur(8px);border:1px solid rgba(212,165,116,.3);transition:opacity .3s;pointer-events:none;white-space:nowrap}
 .cover-label:hover .cover-hint{opacity:0}
 .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:0 1rem 1rem;max-height:0;overflow:hidden;opacity:0;transition:max-height .6s ease,opacity .4s}
-@media(max-width:1000px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:700px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:450px){.gal-grid{grid-template-columns:1fr}}
-/* La clave del checkbox hack: input:checked ~ .gal-grid (hermano adyacente) */
 .gal-toggle:checked ~ .gal-grid{max-height:5000px;opacity:1}
 .gal-item{position:relative;border-radius:10px;overflow:hidden;background:#050505;aspect-ratio:1/1;border:1px solid rgba(196,131,108,.08);transition:all .3s;cursor:zoom-in}
 .gal-item:hover{border-color:rgba(196,131,108,.3);transform:scale(1.02)}
 .gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
 .gal-item:hover img{transform:scale(1.05)}
-/* LIGHTBOX */
 #lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.96);align-items:center;justify-content:center}
 #lightbox.active{display:flex}
 #lightbox .lb-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px}
@@ -112,15 +96,38 @@ section{padding:7rem 2rem;max-width:1400px;margin:0 auto;position:relative
 footer{text-align:center;padding:3rem;background:var(--black);border-top:1px solid rgba(196,131,108,.08)}
 .footer-logo{font-family:Georgia,serif;font-size:1.5rem;color:var(--rose);letter-spacing:.4rem;margin-bottom:1rem}
 .footer-text{font-size:.72rem;color:#fff;letter-spacing:.18rem;text-transform:uppercase;opacity:.8}
-@media(max-width:1024px){.cats-row{grid-template-columns:1fr 1fr}.about-grid{gap:4rem}}
-@media(max-width:768px){.contact-info{flex-direction:column;gap:1rem;font-size:.75rem;align-items:center;text-align:center}.hero h1{font-size:2.8rem}.hero-sub{font-size:1.8rem}.section-title{font-size:1.8rem}#contacto h2{font-size:2rem}.cards{grid-template-columns:1fr;justify-items:center}.cats-row{grid-template-columns:1fr;gap:1rem;justify-items:center}.about-circle{width:280px;height:280px}.stats{grid-template-columns:1fr;gap:1rem;text-align:center}.contact-info{flex-direction:row;gap:1.5rem;font-size:.8rem}header{padding:.6rem 1rem;width:calc(100% - 16px);top:8px}.logo{font-size:1rem}nav a{margin:0 .3rem;font-size:.65rem}section{padding:3rem 1rem.cat-block{border-radius:12px}.cat-label{font-size:1.1rem;padding:.8rem}.card{padding:1.2rem 1rem}.price{font-size:1.4rem}}
-@media(max-width:480px){.stats{grid-template-columns:1fr;gap:.3rem;padding:0 .05rem}.stats h4{font-size:.7rem}.stats p{font-size:.35rem}.hero h1{font-size:2.4rem;letter-spacing:.15rem}.about-text p{text-align:center}.hero-sub{font-size:.8rem;letter-spacing:.1rem}.hero-desc{font-size:.75rem}.section-title{font-size:1.5rem}#contacto h2{font-size:1.6rem}.about-circle{width:220px;height:220px}.footer-logo{font-size:1.2rem}}
-.wa-float{position:fixed;bottom:24px;right:24px;z-index:99999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:all .3s ease;animation:waPulse 2s ease-in-out infinite}
-.wa-float:hover{transform:scale(1.12);box-shadow:0 6px 30px rgba(37,211,102,.6);background:#1da851}
-.wa-float svg{width:30px;height:30px}
-@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)}50%{box-shadow:0 4px 30px rgba(37,211,102,.7)}}
-@media(max-width:768px){.wa-float{bottom:16px;right:16px;width:52px;height:52px}.wa-float svg{width:26px;height:26px}}
-.wa-icon{font-size:1.2rem}
+
+@media(max-width:768px){
+  .hero-sub{font-size:2rem;letter-spacing:.3rem}
+  .hero-desc{font-size:.9rem;letter-spacing:.2rem}
+  .section-title{font-size:2rem}
+  #contacto h2{font-size:2.5rem}
+  .cards{grid-template-columns:1fr}
+  .cats-row{grid-template-columns:1fr;gap:1rem}
+  .about-circle{width:300px;height:300px}
+  .stats{grid-template-columns:1fr;gap:1rem}
+  .contact-info{flex-direction:column;gap:1rem;font-size:.75rem}
+  header{padding:.6rem 1rem;width:calc(100% - 16px);top:8px}
+  .logo{font-size:1rem}
+  nav a{margin:0 .3rem;font-size:.65rem}
+  section{padding:3rem 1rem}
+  .cat-label{font-size:1.1rem;padding:.8rem}
+  .card{padding:1rem}
+  .price{font-size:1.2rem}
+}
+@media(max-width:480px){
+  .hero-sub{font-size:1.5rem;letter-spacing:.2rem}
+  .hero-desc{font-size:.7rem;letter-spacing:.1rem}
+  .section-title{font-size:1.5rem}
+  #contacto h2{font-size:2rem}
+  .about-circle{width:220px;height:220px}
+  .stats h4{font-size:1.5rem}
+  .stats p{font-size:.6rem}
+  header{padding:.5rem .8rem}
+  .logo{font-size:.85rem}
+  nav a{font-size:.55rem;margin:0 .2rem}
+  section{padding:2rem .8rem}
+}
 </style>
 </head>
 <body>
@@ -132,6 +139,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
+
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="particles" id="particles"></div>
@@ -143,6 +151,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
     </div>
   </div>
 </section>
+
 <section id="about" style="overflow:hidden">
   <div style="display:flex;align-items:center;justify-content:space-between;gap:4rem;flex-wrap:wrap;">
     <div style="flex:1;min-width:280px;display:flex;align-items:center;justify-content:center;">
@@ -153,25 +162,26 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
         <img src="logo_circle.png" alt="VANESSA MAKE UP" class="about-logo">
       </div>
     </div>
-    <div style="flex:1;min-width:300px;">
-      <h3 style="font-family:Georgia,serif;font-size:2rem;color:var(--rose);margin-bottom:2rem;font-style:italic;font-weight:400;text-align:center;">Elegancia serena, oficio impecable</h3>
+    <div style="flex:1;min-width:300px;text-align:center;">
+      <h3 style="font-family:Georgia,serif;font-size:2rem;color:var(--rose);margin-bottom:2rem;font-style:italic;font-weight:400;">Elegancia serena, oficio impecable</h3>
       <p style="font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:1.5rem;">Vanessa Make Up nace de la convicción de que cada rostro cuenta una historia. Rose dorado sobre negro: lujo contenido, sin excesos, con memoria.</p>
-      <p style="font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:2rem;">Especialidad en estudio de maquillaje para eventos: Quince años, Bodas, Grados, Fantasía y Social. Cada servicio incluye preparación de piel profesional y productos de alta gama.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2);">
-        <div><h4 style="font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400;">500+</h4><p style="font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem;">Eventos</p></div>
-        <div><h4 style="font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400;">5</h4><p style="font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem;">Años Experiencia</p></div>
-        <div><h4 style="font-family:Georgia,serif;font-size:2.5rem;color:var(--rose);font-weight:400;">100%</h4><p style="font-size:.75rem;letter-spacing:.2rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.5rem;">Compromiso</p></div>
+      <p style="font-weight:300;line-height:1.9;color:rgba(232,232,232,.75);font-size:.95rem;margin-bottom:2rem;">Especialidad en estudio de maquillaje para eventos: Quince años, Bodas, Grados, Fantasía y Social.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;text-align:center;padding-top:2rem;border-top:1px solid rgba(196,131,108,.2);">
+        <div><h4 style="font-family:Georgia,serif;font-size:2rem;color:var(--rose);font-weight:400;">500+</h4><p style="font-size:.7rem;letter-spacing:.1rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.3rem;">Eventos</p></div>
+        <div><h4 style="font-family:Georgia,serif;font-size:2rem;color:var(--rose);font-weight:400;">5</h4><p style="font-size:.7rem;letter-spacing:.1rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.3rem;">Años Experiencia</p></div>
+        <div><h4 style="font-family:Georgia,serif;font-size:2rem;color:var(--rose);font-weight:400;">100%</h4><p style="font-size:.7rem;letter-spacing:.1rem;text-transform:uppercase;color:rgba(232,232,232,.5);margin-top:.3rem;">Compromiso</p></div>
       </div>
     </div>
   </div>
 </section>
+
 <section id="categorias">
   <div class="section-header">
     <div class="section-label">Catálogo</div>
     <h2 class="section-title">Categorías <em>de estilo</em></h2>
     <div class="section-divider"></div>
   </div>
-<div class="cats-row">
+  <div class="cats-row">
     <div class="cat-block">
       <div class="cat-label">15 Años</div>
       <input type="checkbox" class="gal-toggle" id="gal-15-anios">
@@ -221,9 +231,11 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
         <div class="gal-item"><img src="photos/noche-glam/img12.jpg" alt="" loading="lazy"></div>
       </div>
     </div>
-</div>
+  </div>
+</section>
+
 <section id="categorias-2">
-<div class="cats-row">
+  <div class="cats-row">
     <div class="cat-block">
       <div class="cat-label">Peinados</div>
       <input type="checkbox" class="gal-toggle" id="gal-peinados">
@@ -242,8 +254,9 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
         <div class="gal-item"><img src="photos/peinados/img9.jpg" alt="" loading="lazy"></div>
       </div>
     </div>
-</div>
+  </div>
 </section>
+
 <section id="servicios">
   <div class="section-header">
     <div class="section-label">Servicios</div>
@@ -295,13 +308,14 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
     </div>
   </div>
 </section>
+
 <section id="contacto">
   <h2>Contacto</h2>
   <div class="section-divider"></div>
-  <div style="max-width:600px;margin:0 auto 2.5rem;text-align:left;">
-    <h3 style="font-family:Georgia,serif;font-size:1.4rem;color:var(--rose);margin-bottom:1rem;text-align:center;">Servicios / Especialidad</h3>
-    <p style="font-weight:300;line-height:1.8;color:rgba(232,232,232,.7);text-align:center;margin-bottom:1.5rem;">Especialidad en estudio de maquillaje para eventos</p>
-    <div style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem;">
+  <div style="max-width:600px;margin:0 auto 2.5rem;text-align:center;">
+    <h3 style="font-family:Georgia,serif;font-size:1.4rem;color:var(--rose);margin-bottom:1rem;">Servicios / Especialidad</h3>
+    <p style="font-weight:300;line-height:1.8;color:rgba(232,232,232,.7);margin-bottom:1.5rem;">Especialidad en estudio de maquillaje para eventos</p>
+    <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
       <span style="background:rgba(196,131,108,.15);color:var(--rose-pale);padding:.4rem 1rem;border-radius:999px;font-size:.85rem;">Quince años</span>
       <span style="background:rgba(196,131,108,.15);color:var(--rose-pale);padding:.4rem 1rem;border-radius:999px;font-size:.85rem;">Bodas</span>
       <span style="background:rgba(196,131,108,.15);color:var(--rose-pale);padding:.4rem 1rem;border-radius:999px;font-size:.85rem;">Grados</span>
@@ -317,10 +331,11 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
     <span><a href="https://www.tiktok.com/@vanessa_makeup_st1" target="_blank" rel="noopener" class="cta" style="background:#000;border-color:#000;border-radius:999px;display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;font-size:.8rem;">🎵 TikTok</a></span>
   </div>
 </section>
-<!-- BOTON WHATSAPP FLOTANTE -->
-<a href="https://wa.me/573166140335?text=Hola%20Vanessa,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:24px;right:24px;z-index:99999;width:64px;height:64px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:all .3s;">
+
+<a href="https://wa.me/573166140335?text=Hola%20Vanessa,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:24px;right:24px;z-index:99999;width:64px;height:64px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);">
   <svg viewBox="0 0 24 24" width="32" height="32" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
 <footer>
   <div class="footer-logo">VANESSA MAKE UP</div>
   <p class="footer-text">© 2026 — Maquillaje Profesional</p>
@@ -329,7 +344,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
     <img src="https://visitor-badge.laobi.icu/badge?page_id=charly197710.vanessa-makeup-landing&left_text=Visitantes&right_color=c4836c&left_color=1a1a1a" alt="Contador de visitantes" style="height:20px;">
   </div>
 </footer>
-<!-- LIGHTBOX -->
+
 <div id="lightbox">
   <button class="lb-close" id="lb-close">&times;</button>
   <button class="lb-nav lb-prev" id="lb-prev">&#8249;</button>
@@ -337,46 +352,25 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
   <button class="lb-nav lb-next" id="lb-next">&#8250;</button>
   <div class="lb-counter" id="lb-counter"></div>
 </div>
+
 <script>
-// Particles
 var pc=document.getElementById('particles');
 if(pc){for(var i=0;i<60;i++){var p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(Math.random()*15+10)+'s';p.style.animationDelay=(Math.random()*15)+'s';var s=(Math.random()*6+2)+'px';p.style.width=s;p.style.height=s;p.style.opacity=(Math.random()*.5+.5);pc.appendChild(p)}}
-// Lightbox
 var lb=document.getElementById('lightbox');
 var lbImg=document.getElementById('lb-img');
 var lbCounter=document.getElementById('lb-counter');
 var lbImages=[];
 var lbIndex=0;
-function openLB(imgs,idx){
-  lbImages=imgs;lbIndex=idx;
-  lbImg.src=imgs[idx];
-  lbCounter.textContent=(idx+1)+' / '+imgs.length;
-  lb.classList.add('active');
-  document.body.style.overflow='hidden';
-}
+function openLB(imgs,idx){lbImages=imgs;lbIndex=idx;lbImg.src=imgs[idx];lbCounter.textContent=(idx+1)+' / '+imgs.length;lb.classList.add('active');document.body.style.overflow='hidden'}
 function closeLB(){lb.classList.remove('active');document.body.style.overflow=''}
 function prevLB(){lbIndex=(lbIndex-1+lbImages.length)%lbImages.length;lbImg.src=lbImages[lbIndex];lbCounter.textContent=(lbIndex+1)+' / '+lbImages.length}
 function nextLB(){lbIndex=(lbIndex+1)%lbImages.length;lbImg.src=lbImages[lbIndex];lbCounter.textContent=(lbIndex+1)+' / '+lbImages.length}
-document.querySelectorAll('.gal-item').forEach(function(el){
-  el.addEventListener('click',function(){
-    var grid=this.closest('.gal-grid');
-    var imgs=Array.from(grid.querySelectorAll('.gal-item img')).map(function(i){return i.src});
-    var idx=imgs.indexOf(this.querySelector('img').src);
-    openLB(imgs,idx);
-  });
-});
+document.querySelectorAll('.gal-item').forEach(function(el){el.addEventListener('click',function(){var grid=this.closest('.gal-grid');var imgs=Array.from(grid.querySelectorAll('.gal-item img')).map(function(i){return i.src});var idx=imgs.indexOf(this.querySelector('img').src);openLB(imgs,idx)})});
 document.getElementById('lb-close').addEventListener('click',closeLB);
 document.getElementById('lb-prev').addEventListener('click',prevLB);
 document.getElementById('lb-next').addEventListener('click',nextLB);
 lb.addEventListener('click',function(e){if(e.target===lb)closeLB()});
-document.addEventListener('keydown',function(e){
-  if(!lb.classList.contains('active'))return;
-  if(e.key==='Escape')closeLB();
-  if(e.key==='ArrowLeft')prevLB();
-  if(e.key==='ArrowRight')nextLB();
-});
+document.addEventListener('keydown',function(e){if(!lb.classList.contains('active'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')prevLB();if(e.key==='ArrowRight')nextLB()});
 </script>
 </body>
 </html>
-<!-- v5.0 -->
-/* force rebuild 1781230886 */
