@@ -17,10 +17,11 @@ nav a:hover{color:var(--rose)}nav a:hover::after{width:100%}
 .hero{min-height:100vh;background:radial-gradient(ellipse at center,#2a1518 0%,var(--black) 70%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:0 1rem}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(196,131,108,.15) 0%,transparent 50%),radial-gradient(circle at 80% 70%,rgba(212,165,116,.1) 0%,transparent 50%)}
 .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.particle{position:absolute;border-radius:50%;opacity:0;animation:floatUp linear infinite}
-.particle:nth-child(odd){background:var(--rose);opacity:.7}
-.particle:nth-child(even){background:var(--gold);opacity:.5}
-@keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0}5%{opacity:.8}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+.particle{position:absolute;border-radius:50%;animation:floatUp linear infinite;box-shadow:0 0 10px 2px currentColor}
+.particle:nth-child(odd){background:var(--rose);opacity:.9}
+.particle:nth-child(even){background:var(--gold);opacity:.7}
+.particle:nth-child(3n){background:var(--rose-pale);opacity:.8;box-shadow:0 0 15px 4px var(--rose)}
+@keyframes floatUp{0%{transform:translateY(100vh) scale(0);opacity:0}3%{opacity:1}50%{opacity:.9}100%{transform:translateY(-20vh) scale(1.5);opacity:0}}
 .hero-content{position:relative;z-index:2}
 .hero-sub{font-family:Georgia,serif;font-style:italic;font-size:4.5rem;font-weight:900;color:var(--silver);letter-spacing:1rem;margin-bottom:2rem;animation:fadeUp 1s ease .3s both}
 .hero-line{width:80px;height:1px;margin:2rem auto;background:linear-gradient(90deg,transparent,var(--rose),transparent);animation:fadeUp 1s ease .7s both}
@@ -355,7 +356,7 @@ footer{text-align:center;padding:3rem;background:var(--black);border-top:1px sol
 
 <script>
 var pc=document.getElementById('particles');
-if(pc){for(var i=0;i<60;i++){var p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(Math.random()*15+10)+'s';p.style.animationDelay=(Math.random()*15)+'s';var s=(Math.random()*6+2)+'px';p.style.width=s;p.style.height=s;p.style.opacity=(Math.random()*.5+.5);pc.appendChild(p)}}
+if(pc){for(var i=0;i<100;i++){var p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(Math.random()*15+10)+'s';p.style.animationDelay=(Math.random()*15)+'s';var s=(Math.random()*6+2)+'px';p.style.width=s;p.style.height=s;p.style.opacity=(Math.random()*.5+.5);pc.appendChild(p)}}
 var lb=document.getElementById('lightbox');
 var lbImg=document.getElementById('lb-img');
 var lbCounter=document.getElementById('lb-counter');
