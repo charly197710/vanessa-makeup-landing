@@ -372,6 +372,25 @@ document.getElementById('lb-prev').addEventListener('click',prevLB);
 document.getElementById('lb-next').addEventListener('click',nextLB);
 lb.addEventListener('click',function(e){if(e.target===lb)closeLB()});
 document.addEventListener('keydown',function(e){if(!lb.classList.contains('active'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')prevLB();if(e.key==='ArrowRight')nextLB()});
-</script>
+
+// ESCUDO ANTI-CLONACIÓN BÁSICO
+(function(){
+  // 1. Bloqueo de clic derecho
+  document.addEventListener('contextmenu',function(e){e.preventDefault()});
+  
+  // 2. Bloqueo de teclas de hacker (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S, Ctrl+P)
+  document.addEventListener('keydown',function(e){
+    if(e.key==='F12' || (e.ctrlKey && e.shiftKey && (e.key==='I' || e.key==='J' || e.key==='C')) || (e.ctrlKey && (e.key==='u' || e.key==='s' || e.key==='p' || e.key==='a'))){e.preventDefault();return false}
+  });
+  
+  // 3. Bloqueo de selección (excepto inputs, textarea)
+  document.addEventListener('selectstart',function(e){
+    var t=e.target.tagName.toLowerCase();
+    if(t!=='input' && t!=='textarea'){e.preventDefault()}
+  });
+  
+  // 4. Bloqueo de arrastre de imágenes
+  document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG'){e.preventDefault()}});
+})();
 </body>
 </html>
