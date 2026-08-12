@@ -378,7 +378,7 @@ function closeLB(){lb.classList.remove('active');document.body.style.overflow=''
 function prevLB(){lbIndex=(lbIndex-1+lbImages.length)%lbImages.length;lbImg.src=lbImages[lbIndex];lbCounter.textContent=(lbIndex+1)+' / '+lbImages.length}
 function nextLB(){lbIndex=(lbIndex+1)%lbImages.length;lbImg.src=lbImages[lbIndex];lbCounter.textContent=(lbIndex+1)+' / '+lbImages.length}
 // Event delegation para galería (funciona con elementos dinámicos)
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function(e) { console.log('Click detectado');
   var item = e.target.closest('.gal-item');
   if (item) {
     var grid = item.closest('.gal-grid');
